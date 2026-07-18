@@ -1,0 +1,692 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>SuccessTracker – Admin Dashboard</title>
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --brand:       #1a6b4a;
+      --brand-dark:  #0f4a33;
+      --brand-light: #e8f5ee;
+      --accent:      #f5a623;
+      --red:         #e74c3c;
+      --red-light:   #fdecea;
+      --blue:        #2563eb;
+      --blue-light:  #eff6ff;
+      --purple:      #7c3aed;
+      --purple-light:#f5f3ff;
+      --text:        #1c1c1e;
+      --text-sub:    #6b7280;
+      --bg:          #f4f6f9;
+      --card:        #ffffff;
+      --border:      #e5e7eb;
+      --radius:      16px;
+      --shadow:      0 2px 16px rgba(0,0,0,.08);
+    }
+
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      min-height: 100vh;
+    }
+
+    /* ── TOP BAR ── */
+    .topbar {
+      background: var(--brand-dark);
+      padding: 0 1.5rem;
+      height: 60px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      box-shadow: 0 2px 12px rgba(0,0,0,.2);
+    }
+    .topbar-left {
+      display: flex;
+      align-items: center;
+      gap: .75rem;
+    }
+    .topbar-icon {
+      width: 34px;
+      height: 34px;
+      background: var(--brand);
+      border-radius: 9px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .topbar-icon svg {
+      width: 18px;
+      height: 18px;
+      fill: none;
+      stroke: #fff;
+      stroke-width: 2;
+      stroke-linecap: round;
+      stroke-linejoin: round;
+    }
+    .topbar-title {
+      font-size: 1rem;
+      font-weight: 700;
+      color: #fff;
+      line-height: 1.2;
+    }
+    .topbar-sub {
+      font-size: .72rem;
+      color: rgba(255,255,255,.55);
+      font-weight: 400;
+    }
+    .topbar-right {
+      display: flex;
+      align-items: center;
+      gap: .75rem;
+    }
+    .live-dot {
+      display: flex;
+      align-items: center;
+      gap: .4rem;
+      font-size: .75rem;
+      color: rgba(255,255,255,.6);
+    }
+    .live-dot span {
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background: #4ade80;
+      animation: pulse 2s infinite;
+    }
+    @keyframes pulse {
+      0%, 100% { opacity: 1; }
+      50% { opacity: .4; }
+    }
+    .refresh-btn {
+      background: rgba(255,255,255,.12);
+      border: 1px solid rgba(255,255,255,.2);
+      color: #fff;
+      padding: .45rem .9rem;
+      border-radius: 8px;
+      font-size: .8rem;
+      font-weight: 600;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      gap: .4rem;
+      transition: background .2s;
+    }
+    .refresh-btn:hover { background: rgba(255,255,255,.22); }
+    .refresh-btn:disabled { opacity: .5; cursor: not-allowed; }
+    .refresh-btn svg {
+      width: 14px;
+      height: 14px;
+      stroke: currentColor;
+      fill: none;
+      stroke-width: 2.2;
+      stroke-linecap: round;
+      stroke-linejoin: round;
+      transition: transform .5s;
+    }
+    .refresh-btn.spinning svg { animation: spin .6s linear; }
+    @keyframes spin { to { transform: rotate(360deg); } }
+
+    /* ── MAIN ── */
+    .main {
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 1.5rem 1rem 3rem;
+    }
+
+    /* ── STATUS BAR ── */
+    .status-bar {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: .5rem;
+      margin-bottom: 1.4rem;
+    }
+    .page-title {
+      font-size: 1.15rem;
+      font-weight: 700;
+      color: var(--brand-dark);
+    }
+    .last-updated {
+      font-size: .78rem;
+      color: var(--text-sub);
+    }
+
+    /* ── ERROR BANNER ── */
+    .error-banner {
+      display: none;
+      background: var(--red-light);
+      border: 1px solid #fca5a5;
+      border-radius: 12px;
+      padding: .9rem 1.1rem;
+      margin-bottom: 1.2rem;
+      display: none;
+      align-items: center;
+      gap: .7rem;
+      font-size: .88rem;
+      color: var(--red);
+      font-weight: 500;
+    }
+    .error-banner.show { display: flex; }
+    .error-banner svg {
+      width: 18px;
+      height: 18px;
+      stroke: currentColor;
+      fill: none;
+      stroke-width: 2;
+      stroke-linecap: round;
+      flex-shrink: 0;
+    }
+
+    /* ── STAT CARDS ── */
+    .cards-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 1rem;
+      margin-bottom: 1.5rem;
+    }
+    .stat-card {
+      background: var(--card);
+      border-radius: var(--radius);
+      padding: 1.4rem;
+      border: 1px solid var(--border);
+      box-shadow: var(--shadow);
+      position: relative;
+      overflow: hidden;
+      transition: transform .2s, box-shadow .2s;
+    }
+    .stat-card:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 6px 24px rgba(0,0,0,.11);
+    }
+    .stat-card::before {
+      content: '';
+      position: absolute;
+      top: 0; left: 0; right: 0;
+      height: 4px;
+    }
+    .card-counsel::before { background: var(--brand); }
+    .card-teacher::before { background: var(--purple); }
+    .card-demo::before    { background: var(--accent); }
+
+    .card-top {
+      display: flex;
+      align-items: flex-start;
+      justify-content: space-between;
+      margin-bottom: 1.1rem;
+    }
+    .card-icon {
+      width: 44px;
+      height: 44px;
+      border-radius: 12px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.3rem;
+    }
+    .card-counsel .card-icon { background: var(--brand-light); }
+    .card-teacher .card-icon { background: var(--purple-light); }
+    .card-demo    .card-icon { background: #fff8ec; }
+
+    .card-badge {
+      font-size: .7rem;
+      font-weight: 700;
+      padding: .25rem .6rem;
+      border-radius: 20px;
+      letter-spacing: .04em;
+    }
+    .card-counsel .card-badge { background: var(--brand-light); color: var(--brand-dark); }
+    .card-teacher .card-badge { background: var(--purple-light); color: var(--purple); }
+    .card-demo    .card-badge { background: #fff8ec; color: #b45309; }
+
+    .card-num {
+      font-size: 2.6rem;
+      font-weight: 800;
+      line-height: 1;
+      margin-bottom: .3rem;
+      letter-spacing: -.02em;
+    }
+    .card-counsel .card-num { color: var(--brand-dark); }
+    .card-teacher .card-num { color: var(--purple); }
+    .card-demo    .card-num { color: #b45309; }
+
+    .card-label {
+      font-size: .88rem;
+      font-weight: 600;
+      color: var(--text);
+      margin-bottom: .2rem;
+    }
+    .card-desc {
+      font-size: .76rem;
+      color: var(--text-sub);
+    }
+
+    /* skeleton */
+    .skeleton {
+      background: linear-gradient(90deg, #f0f0f0 25%, #e0e0e0 50%, #f0f0f0 75%);
+      background-size: 200% 100%;
+      animation: shimmer 1.4s infinite;
+      border-radius: 6px;
+    }
+    @keyframes shimmer {
+      0%   { background-position: 200% 0; }
+      100% { background-position: -200% 0; }
+    }
+    .num-skeleton { width: 60px; height: 42px; }
+    .lbl-skeleton { width: 140px; height: 14px; margin-bottom: .4rem; }
+    .desc-skeleton { width: 100px; height: 11px; }
+
+    /* ── SUMMARY TABLE ── */
+    .summary-card {
+      background: var(--card);
+      border-radius: var(--radius);
+      border: 1px solid var(--border);
+      box-shadow: var(--shadow);
+      overflow: hidden;
+      margin-bottom: 1.5rem;
+    }
+    .summary-head {
+      padding: 1rem 1.4rem;
+      border-bottom: 1px solid var(--border);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+    .summary-head-title {
+      font-size: .92rem;
+      font-weight: 700;
+      color: var(--brand-dark);
+    }
+    .summary-head-sub { font-size: .76rem; color: var(--text-sub); }
+    table {
+      width: 100%;
+      border-collapse: collapse;
+    }
+    th, td {
+      padding: .85rem 1.4rem;
+      text-align: left;
+      font-size: .85rem;
+      border-bottom: 1px solid var(--border);
+    }
+    th {
+      background: #fafafa;
+      font-weight: 700;
+      color: var(--text-sub);
+      font-size: .75rem;
+      letter-spacing: .05em;
+      text-transform: uppercase;
+    }
+    tr:last-child td { border-bottom: none; }
+    tr:hover td { background: #fafafa; }
+    td:last-child { font-weight: 700; }
+    .dot-counsel { color: var(--brand); }
+    .dot-teacher { color: var(--purple); }
+    .dot-demo    { color: #b45309; }
+    .dot {
+      display: inline-block;
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      margin-right: .5rem;
+    }
+
+    /* ── FOOTER ── */
+    .footer-note {
+      text-align: center;
+      font-size: .75rem;
+      color: var(--text-sub);
+      padding-top: .5rem;
+    }
+    .footer-note a {
+      color: var(--brand);
+      text-decoration: none;
+      font-weight: 600;
+    }
+
+    /* ── MOBILE ── */
+    @media (max-width: 480px) {
+      .topbar { padding: 0 1rem; }
+      .topbar-sub { display: none; }
+      .live-dot span + span { display: none; }
+      .main { padding: 1.2rem .75rem 2.5rem; }
+      .cards-grid { grid-template-columns: 1fr; }
+      th, td { padding: .75rem 1rem; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- ── TOP BAR ── -->
+<header class="topbar">
+  <div class="topbar-left">
+    <div class="topbar-icon">
+      <svg viewBox="0 0 24 24"><path d="M12 2L2 7l10 5 10-5-10-5z"/><path d="M2 17l10 5 10-5"/><path d="M2 12l10 5 10-5"/></svg>
+    </div>
+    <div>
+      <div class="topbar-title">SuccessTracker</div>
+      <div class="topbar-sub">Admin Dashboard</div>
+    </div>
+  </div>
+  <div class="topbar-right">
+    <div class="live-dot">
+      <span></span>
+      <span>Live</span>
+    </div>
+    <button class="refresh-btn" id="refreshBtn" onclick="loadStats()">
+      <svg viewBox="0 0 24 24"><polyline points="23 4 23 10 17 10"/><path d="M20.49 15a9 9 0 1 1-2.12-9.36L23 10"/></svg>
+      Refresh
+    </button>
+  </div>
+</header>
+
+<!-- ── MAIN ── -->
+<main class="main">
+
+  <div class="status-bar">
+    <div class="page-title">Overview</div>
+    <div class="last-updated" id="lastUpdated">Loading...</div>
+  </div>
+
+  <!-- Error Banner -->
+  <div class="error-banner" id="errorBanner">
+    <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>
+    <span id="errorMsg">Could not connect to server. Please check your connection and try again.</span>
+  </div>
+
+  <!-- Stat Cards -->
+  <div class="cards-grid">
+
+    <div class="stat-card card-counsel">
+      <div class="card-top">
+        <div class="card-icon">📞</div>
+        <span class="card-badge">COUNSELLING</span>
+      </div>
+      <div id="num-counsel" class="card-num skeleton num-skeleton">&nbsp;</div>
+      <div class="card-label" id="lbl-counsel"><div class="skeleton lbl-skeleton">&nbsp;</div></div>
+      <div class="card-desc" id="desc-counsel"><div class="skeleton desc-skeleton">&nbsp;</div></div>
+    </div>
+
+    <div class="stat-card card-teacher">
+      <div class="card-top">
+        <div class="card-icon">👨‍🏫</div>
+        <span class="card-badge">TEACHERS</span>
+      </div>
+      <div id="num-teacher" class="card-num skeleton num-skeleton">&nbsp;</div>
+      <div class="card-label" id="lbl-teacher"><div class="skeleton lbl-skeleton">&nbsp;</div></div>
+      <div class="card-desc" id="desc-teacher"><div class="skeleton desc-skeleton">&nbsp;</div></div>
+    </div>
+
+    <div class="stat-card card-demo">
+      <div class="card-top">
+        <div class="card-icon">🎓</div>
+        <span class="card-badge">DEMO CLASSES</span>
+      </div>
+      <div id="num-demo" class="card-num skeleton num-skeleton">&nbsp;</div>
+      <div class="card-label" id="lbl-demo"><div class="skeleton lbl-skeleton">&nbsp;</div></div>
+      <div class="card-desc" id="desc-demo"><div class="skeleton desc-skeleton">&nbsp;</div></div>
+    </div>
+
+  </div>
+
+  <!-- Summary Table -->
+   <div class="summary-card">
+  <div class="summary-head">
+    <div class="summary-head-title">📋 Latest Counselling Leads</div>
+  </div>
+
+  <table>
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Phone</th>
+        <th>Grade</th>
+        <th>Status</th>
+      </tr>
+    </thead>
+    <tbody id="counsellingBody">
+      <tr>
+        <td colspan="4">Loading...</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+  <div class="summary-card">
+    <div class="summary-head">
+      <div>
+        <div class="summary-head-title">📊 Request Summary</div>
+      </div>
+      <div class="summary-head-sub" id="totalBadge">—</div>
+    </div>
+    <table>
+      <thead>
+        <tr>
+          <th>Category</th>
+          <th>Description</th>
+          <th>Count</th>
+        </tr>
+      </thead>
+      <tbody id="summaryBody">
+        <tr><td colspan="3" style="text-align:center;color:var(--text-sub);padding:1.5rem;">Loading data...</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="footer-note">
+    Data from &nbsp;<a href="https://success-tracker-backend.onrender.com" target="_blank">success-tracker-backend.onrender.com</a>
+    &nbsp;·&nbsp; SuccessTracker Admin © 2026
+  </div>
+
+</main>
+
+<script>
+const API = 'https://success-tracker-backend.onrender.com/api/admin/stats';
+const COUNSELLING_API = 'https://success-tracker-backend.onrender.com/api/admin/counsellings';
+
+async function loadStats() {
+  const btn = document.getElementById('refreshBtn');
+  const errorBanner = document.getElementById('errorBanner');
+
+  btn.disabled = true;
+  btn.classList.add('spinning');
+  errorBanner.classList.remove('show');
+  document.getElementById('lastUpdated').textContent = 'Refreshing...';
+
+  setSkeletons();
+
+  try {
+    const res = await fetch(API, { cache: 'no-cache' });
+
+    if (!res.ok) {
+      throw new Error(`Server error: ${res.status}`);
+    }
+
+    const data = await res.json();
+
+    renderCards(data);
+    renderTable(data);
+
+    const now = new Date();
+    document.getElementById('lastUpdated').textContent =
+      'Updated: ' +
+      now.toLocaleTimeString('en-IN', {
+        hour: '2-digit',
+        minute: '2-digit',
+        second: '2-digit'
+      });
+
+  } catch (err) {
+    console.error(err);
+
+    document.getElementById('errorMsg').textContent =
+      'Could not fetch data. ' + err.message;
+
+    errorBanner.classList.add('show');
+    document.getElementById('lastUpdated').textContent =
+      'Last refresh failed';
+
+    clearSkeletons();
+  } finally {
+    btn.disabled = false;
+    btn.classList.remove('spinning');
+  }
+}
+
+async function loadCounsellings() {
+  try {
+    const res = await fetch(COUNSELLING_API);
+
+    if (!res.ok) {
+      throw new Error('Failed to load counselling data');
+    }
+
+    const data = await res.json();
+
+    document.getElementById('counsellingBody').innerHTML =
+  data.map(item => `
+    <tr>
+      <td>${item.name || ''}</td>
+      <td>${item.phone || ''}</td>
+      <td>${item.grade || ''}</td>
+      <td>
+        <select onchange="updateStatus('${item._id}', this.value)">
+          <option value="New" ${item.status === 'New' ? 'selected' : ''}>New</option>
+          <option value="Contacted" ${item.status === 'Contacted' ? 'selected' : ''}>Contacted</option>
+          <option value="Converted" ${item.status === 'Converted' ? 'selected' : ''}>Converted</option>
+        </select>
+      </td>
+    </tr>
+  `).join('');
+
+  } catch (err) {
+    console.error(err);
+
+    document.getElementById('counsellingBody').innerHTML =
+      '<tr><td colspan="4">Failed to load data</td></tr>';
+  }
+}
+async function updateStatus(id, status) {
+  try {
+    const res = await fetch(
+      `https://success-tracker-backend.onrender.com/api/admin/counselling/${id}`,
+      {
+        method: "PATCH",
+        headers: {
+          "Content-Type": "application/json"
+        },
+        body: JSON.stringify({ status })
+      }
+    );
+
+    const data = await res.json();
+
+    if (data.success) {
+      alert("Status Updated Successfully");
+    } else {
+      alert("Update Failed");
+    }
+
+  } catch (err) {
+    console.error(err);
+    alert("Server Error");
+  }
+}
+function renderCards(data) {
+  const c = data.counsellings ?? 0;
+  const t = data.teachers ?? 0;
+  const d = data.democlasses ?? 0;
+
+  setCard(
+    'counsel',
+    c,
+    'Counselling Requests',
+    'Free session enquiries received'
+  );
+
+  setCard(
+    'teacher',
+    t,
+    'Teacher Registrations',
+    'Tutors submitted for verification'
+  );
+
+  setCard(
+    'demo',
+    d,
+    'Demo Class Requests',
+    'Free trial class bookings received'
+  );
+}
+
+function setCard(id, num, label, desc) {
+  const numEl = document.getElementById('num-' + id);
+  const lblEl = document.getElementById('lbl-' + id);
+  const descEl = document.getElementById('desc-' + id);
+
+  numEl.classList.remove('skeleton', 'num-skeleton');
+  numEl.textContent = num;
+
+  lblEl.innerHTML = label;
+  descEl.innerHTML = desc;
+}
+
+function renderTable(data) {
+  const c = data.counsellings ?? 0;
+  const t = data.teachers ?? 0;
+  const d = data.democlasses ?? 0;
+
+  const total = c + t + d;
+
+  document.getElementById('totalBadge').textContent =
+    `Total: ${total} requests`;
+
+  document.getElementById('summaryBody').innerHTML = `
+    <tr>
+      <td><span class="dot" style="background:var(--brand);"></span>Counselling</td>
+      <td>Free counselling session requests</td>
+      <td class="dot-counsel">${c}</td>
+    </tr>
+    <tr>
+      <td><span class="dot" style="background:var(--purple);"></span>Teacher Reg.</td>
+      <td>Tutor verification applications</td>
+      <td class="dot-teacher">${t}</td>
+    </tr>
+    <tr>
+      <td><span class="dot" style="background:#b45309;"></span>Demo Classes</td>
+      <td>Free trial class bookings</td>
+      <td class="dot-demo">${d}</td>
+    </tr>
+    <tr style="background:#fafafa;">
+      <td colspan="2" style="font-weight:700;">Total Requests</td>
+      <td style="font-weight:800;">${total}</td>
+    </tr>
+  `;
+}
+
+function setSkeletons() {
+  document.getElementById('summaryBody').innerHTML =
+    '<tr><td colspan="3" style="text-align:center;padding:1.5rem;">Loading...</td></tr>';
+}
+
+function clearSkeletons() {
+  document.getElementById('summaryBody').innerHTML =
+    '<tr><td colspan="3" style="text-align:center;padding:1.5rem;color:red;">Failed to load</td></tr>';
+}
+
+loadStats();
+loadCounsellings();
+
+setInterval(() => {
+  loadStats();
+  loadCounsellings();
+}, 60000);
+</script>
+
+</body>
+</html>

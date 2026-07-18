@@ -1,0 +1,1950 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>SuccessTracker — Trusted Home Tuition in Jaipur | Verified Tutors</title>
+  <meta name="description" content="SuccessTracker connects parents in Jaipur with verified, experienced home tutors for Nursery to Class 12. Book a free demo class today." />
+
+  <!-- Favicon -->
+  <link rel="icon" href="assets/favicon.ico" sizes="any">
+  <link rel="icon"
+        type="image/png"
+        sizes="32x32"
+        href="assets/favicon-32.png">
+  <link rel="icon"
+        type="image/png"
+        sizes="16x16"
+        href="assets/favicon-16.png">
+  <link rel="apple-touch-icon"
+        sizes="180x180"
+        href="assets/favicon-180.png">
+  <meta name="theme-color" content="#166534">
+
+  <!-- Performance: establish early connection to the backend API used by the demo-booking and counselling forms -->
+  <link rel="preconnect" href="https://success-tracker-backend.onrender.com" />
+
+  <!-- Premium typography: Fraunces (display serif for headlines) + Inter (body/UI) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,wght@0,500;0,600;0,700;1,500;1,600&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+
+  <!-- Global stylesheet (all sections) -->
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+
+  <!-- Skip link for keyboard / screen-reader users -->
+  <a href="#main-content" class="skip-link">Skip to main content</a>
+
+  <!-- ============================================================
+       HEADER & NAVIGATION
+       ============================================================ -->
+  <!-- ============================================================
+     SUCCESSTRACKER — HEADER & NAVIGATION
+     Replace existing <nav> + <div class="mobile-menu"> with this
+     ============================================================ -->
+
+<!-- ── HEADER ── -->
+<header class="st-header" id="st-header" role="banner">
+  <div class="st-nav-inner">
+
+    <!-- Logo -->
+    <a href="index.html" class="st-logo" aria-label="SuccessTracker Home">
+      <img src="assets/logo.png" alt="SuccessTracker — Home Tuition" class="st-logo-img" />
+    </a>
+
+    <!-- Desktop Nav -->
+    <nav class="st-desktop-nav" aria-label="Main navigation">
+      <ul class="st-nav-list" role="list">
+
+        <li class="st-nav-item">
+          <a href="index.html" class="st-nav-link st-active" aria-current="page">Home</a>
+        </li>
+
+        <li class="st-nav-item">
+          <a href="about.html" class="st-nav-link">About Us</a>
+        </li>
+
+        <li class="st-nav-item">
+          <a href="#counselling" class="st-nav-link">Join as Tutor</a>
+        </li>
+
+        <!-- More Dropdown -->
+        <li class="st-nav-item st-has-dropdown">
+          <button class="st-nav-link st-dropdown-trigger"
+                  aria-haspopup="true"
+                  aria-expanded="false"
+                  aria-controls="st-more-menu"
+                  id="st-more-btn">
+            More
+            <svg class="st-chevron" viewBox="0 0 16 16" fill="none"
+                 aria-hidden="true" width="14" height="14">
+              <path d="M4 6l4 4 4-4" stroke="currentColor"
+                    stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </button>
+
+          <div class="st-dropdown" id="st-more-menu"
+               role="menu" aria-labelledby="st-more-btn">
+            <a href="#why-us"      class="st-dropdown-item" role="menuitem">
+              <span class="st-di-icon">✦</span>Why Choose Us
+            </a>
+            <a href="#how"         class="st-dropdown-item" role="menuitem">
+              <span class="st-di-icon">⟳</span>How It Works
+            </a>
+            <a href="#counselling"     class="st-dropdown-item" role="menuitem">
+              <span class="st-di-icon">₹</span>Fee Structure
+            </a>
+            <div class="st-dropdown-divider" role="separator"></div>
+            <a href="#book"        class="st-dropdown-item" role="menuitem">
+              <span class="st-di-icon">📞</span>Contact Us
+            </a>
+          </div>
+        </li>
+
+      </ul>
+    </nav>
+
+    <!-- Right Actions -->
+    <div class="st-nav-actions">
+      <a href="#book" class="st-btn-demo">
+        Book Demo
+      </a>
+      <!-- Hamburger -->
+      <button class="st-hamburger" id="st-hamburger"
+              aria-label="Open menu" aria-expanded="false"
+              aria-controls="st-mobile-menu">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </div>
+
+  </div><!-- /st-nav-inner -->
+</header>
+
+<!-- ── MOBILE MENU ── -->
+<div class="st-mobile-menu" id="st-mobile-menu"
+     role="dialog" aria-modal="true" aria-label="Mobile navigation"
+     hidden>
+  <div class="st-mob-top">
+    <a href="index.html" class="st-logo" onclick="stCloseMenu()" aria-label="SuccessTracker Home">
+      <img src="assets/logo.png" alt="SuccessTracker — Home Tuition" class="st-logo-img" />
+    </a>
+    <button class="st-mob-close" onclick="stCloseMenu()" aria-label="Close menu">
+      <svg viewBox="0 0 24 24" fill="none" width="20" height="20">
+        <path d="M18 6L6 18M6 6l12 12" stroke="currentColor"
+              stroke-width="2" stroke-linecap="round"/>
+      </svg>
+    </button>
+  </div>
+
+  <nav class="st-mob-nav" aria-label="Mobile navigation">
+    <a href="index.html"       class="st-mob-link" onclick="stCloseMenu()">🏠 Home</a>
+    <a href="about.html"     class="st-mob-link" onclick="stCloseMenu()">⭐ About Us</a>
+    <a href="#how"        class="st-mob-link" onclick="stCloseMenu()">⟳ How It Works</a>
+    <a href="#counselling"    class="st-mob-link" onclick="stCloseMenu()">👨‍🏫 Join as Tutor</a>
+    <a href="#counselling"    class="st-mob-link" onclick="stCloseMenu()">₹ Fee Structure</a>
+    <a href="#counselling" class="st-mob-link" onclick="stCloseMenu()">📞 Free Counselling</a>
+    <a href="#book"       class="st-mob-link" onclick="stCloseMenu()">🎓 Contact Us</a>
+  </nav>
+
+  <div class="st-mob-actions">
+    <a href="#book"    class="st-mob-demo-btn" onclick="stCloseMenu()">Book Demo</a>
+  </div>
+
+  <p class="st-mob-footer">
+    Jaipur's trusted home tuition platform · CBSE · RBSE
+  </p>
+</div>
+
+<!-- Mobile overlay -->
+<div class="st-mob-overlay" id="st-mob-overlay" onclick="stCloseMenu()" hidden></div>
+
+  <!-- ============================================================
+       MAIN CONTENT
+       ============================================================ -->
+  <main id="main-content">
+
+    <!-- ── HERO + QUICK DEMO FORM ── -->
+    <!-- ============================================================
+     SUCCESSTRACKER — HERO SECTION
+     Replace existing <section class="hero" id="home"> with this.
+     Ends before the Why Us section.
+     ============================================================ -->
+
+<section class="sh-hero" id="home" aria-label="Hero">
+  <div class="sh-hero-inner">
+
+    <!-- ── LEFT COLUMN ── -->
+    <div class="sh-hero-left">
+
+      <!-- Badge -->
+      <div class="sh-badge" aria-label="Location badge">
+        <span class="sh-badge-dot" aria-hidden="true"></span>
+        Jaipur's Trusted Home Tuition
+      </div>
+
+      <!-- Headline -->
+      <h1 class="sh-headline">
+        Find the Best<br>
+        <span class="sh-headline-accent">Home Tutors</span><br>
+        in Jaipur
+      </h1>
+
+      <!-- Sub -->
+      <p class="sh-sub">
+        Verified &amp; Experienced Home Tutors for Nursery to Class&nbsp;12.
+        Book a <strong>FREE Demo Class</strong> today.
+      </p>
+
+      <!-- Feature list -->
+      <ul class="sh-features" aria-label="Key features">
+        <li class="sh-feature-item">
+          <span class="sh-check" aria-hidden="true">✔</span>
+          Verified Tutors
+        </li>
+        <li class="sh-feature-item">
+          <span class="sh-check" aria-hidden="true">✔</span>
+          Demo Available
+        </li>
+        <li class="sh-feature-item">
+          <span class="sh-check" aria-hidden="true">✔</span>
+          Home Visit
+        </li>
+        <li class="sh-feature-item">
+          <span class="sh-check" aria-hidden="true">✔</span>
+          Flexible Timings
+        </li>
+      </ul>
+
+      <!-- CTAs -->
+      <div class="sh-btns">
+        <a href="#book" class="sh-btn-primary">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none"
+               stroke="currentColor" stroke-width="2.2"
+               stroke-linecap="round" stroke-linejoin="round"
+               aria-hidden="true">
+            <rect x="3" y="4" width="18" height="18" rx="2"/>
+            <line x1="16" y1="2" x2="16" y2="6"/>
+            <line x1="8"  y1="2" x2="8"  y2="6"/>
+            <line x1="3"  y1="10" x2="21" y2="10"/>
+          </svg>
+          Book Demo
+        </a>
+        <a href="tel:+917688864855" class="sh-btn-secondary">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none"
+               stroke="currentColor" stroke-width="2.2"
+               stroke-linecap="round" stroke-linejoin="round"
+               aria-hidden="true">
+            <path d="M22 16.92v3a2 2 0 01-2.18 2
+                     A19.79 19.79 0 013.09 4.18
+                     2 2 0 015.09 2h3a2 2 0 012 1.72
+                     c.127.96.361 1.903.7 2.81
+                     a2 2 0 01-.45 2.11L9.09 9.91
+                     a16 16 0 006.99 6.99l1.27-1.27
+                     a2 2 0 012.11-.45
+                     c.907.339 1.85.573 2.81.7
+                     A2 2 0 0122 16.92z"/>
+          </svg>
+          Call Now
+        </a>
+      </div>
+
+      <!-- Premium feature cards -->
+      <div class="sh-feature-cards" role="list" aria-label="Featured programs">
+
+        <article class="sh-fcard sh-fcard-green" role="listitem">
+          <div class="sh-fcard-icon" aria-hidden="true">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none"
+                 stroke="currentColor" stroke-width="2"
+                 stroke-linecap="round" stroke-linejoin="round">
+              <circle cx="12" cy="12" r="10"/>
+              <path d="M9.09 9a3 3 0 015.83 1c0 2-3 3-3 3"/>
+              <line x1="12" y1="17" x2="12.01" y2="17"/>
+            </svg>
+          </div>
+          <p class="sh-fcard-eyebrow">Top Exams</p>
+          <h3 class="sh-fcard-title">IIT-JEE &amp; NEET Excellence Program</h3>
+          <p class="sh-fcard-sub">Expert Physics &amp; Chemistry Coaching for Serious Aspirants</p>
+          <p class="sh-fcard-note">100% NCERT-Focused Learning Approach</p>
+        </article>
+
+        <article class="sh-fcard sh-fcard-amber" role="listitem">
+          <div class="sh-fcard-icon" aria-hidden="true">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none"
+                 stroke="currentColor" stroke-width="2"
+                 stroke-linecap="round" stroke-linejoin="round">
+              <path d="M4 19.5A2.5 2.5 0 016.5 17H20"/>
+              <path d="M6.5 2H20v20H6.5A2.5 2.5 0 014 19.5v-15A2.5 2.5 0 016.5 2z"/>
+            </svg>
+          </div>
+          <p class="sh-fcard-eyebrow">Free Resources</p>
+          <h3 class="sh-fcard-title">Free Learning Resources</h3>
+          <p class="sh-fcard-sub">Premium Notes, NCERT Books, Practice Sheets &amp; Complete Study Material Included</p>
+        </article>
+
+      </div>
+
+    </div><!-- /sh-hero-left -->
+
+    <!-- ── RIGHT COLUMN — Illustration ── -->
+    <div class="sh-hero-right" aria-hidden="true">
+      <div class="sh-illustration-wrap">
+
+        <!-- Decorative blobs -->
+        <div class="sh-blob sh-blob-1"></div>
+        <div class="sh-blob sh-blob-2"></div>
+
+        <!-- Illustration card -->
+        <div class="sh-illus-card">
+          <svg viewBox="0 0 420 340" xmlns="http://www.w3.org/2000/svg"
+               role="img" aria-label="Home tuition illustration"
+               class="sh-illus-svg">
+
+            <!-- Background rect -->
+            <rect width="420" height="340" rx="24" fill="#f0f9f4"/>
+
+            <!-- Desk surface -->
+            <rect x="60" y="220" width="300" height="14" rx="7" fill="#c8e6d4"/>
+            <!-- Desk legs -->
+            <rect x="90"  y="234" width="12" height="55" rx="4" fill="#b5dcc8"/>
+            <rect x="318" y="234" width="12" height="55" rx="4" fill="#b5dcc8"/>
+
+            <!-- Book stack -->
+            <rect x="80"  y="195" width="52" height="26" rx="5" fill="#1a6b4a"/>
+            <rect x="83"  y="184" width="46" height="13" rx="4" fill="#2e9464"/>
+            <rect x="86"  y="174" width="40" height="11" rx="4" fill="#f5a623"/>
+
+            <!-- Laptop body -->
+            <rect x="150" y="160" width="130" height="86" rx="8" fill="#1c1c1e"/>
+            <rect x="154" y="164" width="122" height="78" rx="5" fill="#0a84ff" opacity=".15"/>
+            <rect x="154" y="164" width="122" height="78" rx="5" fill="none"
+                  stroke="#2e9464" stroke-width="1.5"/>
+            <!-- Screen content lines -->
+            <rect x="162" y="172" width="55" height="6"  rx="3" fill="#fff" opacity=".7"/>
+            <rect x="162" y="182" width="40" height="5"  rx="3" fill="#fff" opacity=".4"/>
+            <rect x="162" y="192" width="50" height="5"  rx="3" fill="#fff" opacity=".4"/>
+            <rect x="162" y="202" width="35" height="5"  rx="3" fill="#fff" opacity=".3"/>
+            <rect x="162" y="215" width="60" height="8"  rx="4" fill="#1a6b4a" opacity=".9"/>
+            <!-- Laptop hinge + base -->
+            <rect x="138" y="244" width="154" height="10" rx="5" fill="#333"/>
+            <rect x="148" y="252" width="134" height="5"  rx="3" fill="#222"/>
+
+            <!-- Student figure -->
+            <!-- Head -->
+            <circle cx="314" cy="158" r="22" fill="#f5c5a0"/>
+            <!-- Hair -->
+            <path d="M293 150 Q295 132 314 130 Q333 132 335 150 Q330 140 314 138 Q298 140 293 150Z"
+                  fill="#3d2314"/>
+            <!-- Body -->
+            <rect x="295" y="178" width="38" height="46" rx="10" fill="#1a6b4a"/>
+            <!-- Arms -->
+            <path d="M295 188 Q272 200 268 220" stroke="#f5c5a0"
+                  stroke-width="10" stroke-linecap="round" fill="none"/>
+            <path d="M333 188 Q348 198 350 215" stroke="#f5c5a0"
+                  stroke-width="10" stroke-linecap="round" fill="none"/>
+            <!-- Legs -->
+            <rect x="298" y="220" width="14" height="38" rx="7" fill="#1c3d5a"/>
+            <rect x="316" y="220" width="14" height="38" rx="7" fill="#1c3d5a"/>
+            <!-- Shoes -->
+            <ellipse cx="305" cy="258" rx="10" ry="5" fill="#111"/>
+            <ellipse cx="323" cy="258" rx="10" ry="5" fill="#111"/>
+
+            <!-- Tutor figure (left) -->
+            <!-- Head -->
+            <circle cx="108" cy="142" r="20" fill="#f5c5a0"/>
+            <!-- Hair -->
+            <path d="M89 136 Q91 120 108 118 Q125 120 127 136 Q122 126 108 124 Q94 126 89 136Z"
+                  fill="#5c3317"/>
+            <!-- Glasses -->
+            <circle cx="102" cy="142" r="7" fill="none" stroke="#333" stroke-width="1.5"/>
+            <circle cx="114" cy="142" r="7" fill="none" stroke="#333" stroke-width="1.5"/>
+            <line x1="109" y1="142" x2="111" y2="142" stroke="#333" stroke-width="1.5"/>
+            <!-- Body -->
+            <rect x="89" y="160" width="38" height="44" rx="10" fill="#7c3aed"/>
+            <!-- Arms -->
+            <path d="M89 170 Q70 180 65 200" stroke="#f5c5a0"
+                  stroke-width="10" stroke-linecap="round" fill="none"/>
+            <path d="M127 170 Q145 178 152 195" stroke="#f5c5a0"
+                  stroke-width="10" stroke-linecap="round" fill="none"/>
+            <!-- Pointer in right hand -->
+            <line x1="150" y1="193" x2="160" y2="175"
+                  stroke="#555" stroke-width="3" stroke-linecap="round"/>
+            <!-- Legs -->
+            <rect x="92"  y="200" width="14" height="38" rx="7" fill="#374151"/>
+            <rect x="110" y="200" width="14" height="38" rx="7" fill="#374151"/>
+            <!-- Shoes -->
+            <ellipse cx="99"  cy="238" rx="10" ry="5" fill="#111"/>
+            <ellipse cx="117" cy="238" rx="10" ry="5" fill="#111"/>
+
+            <!-- Floating badges -->
+            <!-- Badge 1: CBSE -->
+            <rect x="18" y="30" width="78" height="30" rx="15" fill="#fff"
+                  filter="url(#sh-shadow)"/>
+            <text x="57"  y="50" text-anchor="middle" font-family="sans-serif"
+                  font-size="11" font-weight="700" fill="#1a6b4a">✓ CBSE</text>
+
+            <!-- Badge 2: Demo Available -->
+            <rect x="300" y="22" width="110" height="30" rx="15" fill="#fff"
+                  filter="url(#sh-shadow)"/>
+            <text x="355" y="42" text-anchor="middle" font-family="sans-serif"
+                  font-size="10" font-weight="700" fill="#f5a623">Demo Available</text>
+
+            <!-- Badge 3: Verified -->
+            <rect x="326" y="260" width="84" height="30" rx="15" fill="#1a6b4a"/>
+            <text x="368" y="280" text-anchor="middle" font-family="sans-serif"
+                  font-size="11" font-weight="700" fill="#fff">✓ Verified</text>
+
+            <!-- Badge 4: RBSE -->
+            <rect x="14" y="262" width="76" height="30" rx="15" fill="#fff"
+                  filter="url(#sh-shadow)"/>
+            <text x="52"  y="282" text-anchor="middle" font-family="sans-serif"
+                  font-size="11" font-weight="700" fill="#7c3aed">✓ RBSE</text>
+
+            <defs>
+              <filter id="sh-shadow" x="-20%" y="-20%" width="140%" height="140%">
+                <feDropShadow dx="0" dy="2" stdDeviation="3"
+                              flood-color="#000" flood-opacity=".1"/>
+              </filter>
+            </defs>
+          </svg>
+        </div><!-- /sh-illus-card -->
+
+      </div><!-- /sh-illustration-wrap -->
+    </div><!-- /sh-hero-right -->
+
+  </div><!-- /sh-hero-inner -->
+</section><!-- /sh-hero -->
+
+
+<!-- ── QUICK DEMO FORM + TRUST STRIP ── -->
+<section class="sh-form-section" id="book" aria-label="Quick booking form">
+  <div class="sh-form-outer">
+
+    <div class="sh-form-card">
+
+      <!-- Form header -->
+      <div class="sh-form-header">
+        <div class="sh-form-icon" aria-hidden="true">🎓</div>
+        <div>
+          <p class="sh-form-title">Book a Free Demo Class</p>
+          <p class="sh-form-sub">We'll match a tutor near you within 24 hrs</p>
+        </div>
+      </div>
+
+      <!-- Quick form — uses NEW IDs to avoid conflict with #bookForm -->
+      <form class="sh-qform" id="sh-quick-form"
+            onsubmit="shHandleQuickForm(event)" novalidate>
+
+        <div class="sh-qform-fields">
+          <div class="sh-qfield">
+            <label for="sh_name" class="sh-qlabel">Your Name</label>
+            <input type="text" id="sh_name" name="sh_name"
+                   class="sh-qinput" placeholder="e.g. Ramesh Sharma"
+                   autocomplete="name" required />
+          </div>
+
+          <div class="sh-qfield">
+            <label for="sh_phone" class="sh-qlabel">WhatsApp Number</label>
+            <input type="tel" id="sh_phone" name="sh_phone"
+                   class="sh-qinput" placeholder="e.g. 9876543210"
+                   autocomplete="tel" required pattern="[6-9][0-9]{9}" />
+          </div>
+
+          <div class="sh-qfield">
+            <label for="sh_grade" class="sh-qlabel">Child's Class</label>
+            <select id="sh_grade" name="sh_grade" class="sh-qinput sh-qselect" required>
+              <option value="">Select Class</option>
+              <option>Nursery – KG</option>
+              <option>Class 1 – 2</option>
+              <option>Class 3 – 5</option>
+              <option>Class 6 – 8</option>
+              <option>Class 9 – 10</option>
+              <option>Class 11 – 12</option>
+            </select>
+          </div>
+        </div>
+
+        <button type="submit" class="sh-qsubmit" id="sh-qsubmit-btn">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none"
+               stroke="currentColor" stroke-width="2.2"
+               stroke-linecap="round" stroke-linejoin="round"
+               aria-hidden="true">
+            <rect x="3" y="4" width="18" height="18" rx="2"/>
+            <line x1="16" y1="2" x2="16" y2="6"/>
+            <line x1="8"  y1="2" x2="8"  y2="6"/>
+            <line x1="3"  y1="10" x2="21" y2="10"/>
+          </svg>
+          Book Demo
+        </button>
+
+        <p class="sh-qfootnote">
+          🔒 Free · No payment needed · Jaipur only
+        </p>
+
+        <!-- Success message (hidden by default) -->
+        <div class="sh-qsuccess" id="sh-qsuccess" role="alert" aria-live="polite"
+             hidden>
+          ✅ Done! Our team will call you within 2 hours.
+        </div>
+
+      </form>
+
+    </div><!-- /sh-form-card -->
+
+  </div><!-- /sh-form-outer -->
+
+  <!-- ── Trust Strip ── -->
+  <div class="sh-trust-strip" role="list" aria-label="Trust indicators">
+    <div class="sh-trust-item" role="listitem">
+      <span class="sh-trust-icon" aria-hidden="true">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none"
+             stroke="currentColor" stroke-width="2"
+             stroke-linecap="round" stroke-linejoin="round">
+          <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
+        </svg>
+      </span>
+      <span class="sh-trust-text">Verified Tutors</span>
+    </div>
+    <div class="sh-trust-divider" aria-hidden="true"></div>
+    <div class="sh-trust-item" role="listitem">
+      <span class="sh-trust-icon" aria-hidden="true">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none"
+             stroke="currentColor" stroke-width="2"
+             stroke-linecap="round" stroke-linejoin="round">
+          <circle cx="12" cy="12" r="10"/>
+          <polyline points="12 6 12 12 16 14"/>
+        </svg>
+      </span>
+      <span class="sh-trust-text">Demo Available</span>
+    </div>
+    <div class="sh-trust-divider" aria-hidden="true"></div>
+    <div class="sh-trust-item" role="listitem">
+      <span class="sh-trust-icon" aria-hidden="true">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none"
+             stroke="currentColor" stroke-width="2"
+             stroke-linecap="round" stroke-linejoin="round">
+          <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/>
+          <circle cx="12" cy="10" r="3"/>
+        </svg>
+      </span>
+      <span class="sh-trust-text">Jaipur Coverage</span>
+    </div>
+    <div class="sh-trust-divider" aria-hidden="true"></div>
+    <div class="sh-trust-item" role="listitem">
+      <span class="sh-trust-icon" aria-hidden="true">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none"
+             stroke="currentColor" stroke-width="2"
+             stroke-linecap="round" stroke-linejoin="round">
+          <path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/>
+          <circle cx="9" cy="7" r="4"/>
+          <path d="M23 21v-2a4 4 0 00-3-3.87M16 3.13a4 4 0 010 7.75"/>
+        </svg>
+      </span>
+      <span class="sh-trust-text">Personal Attention</span>
+    </div>
+  </div><!-- /sh-trust-strip -->
+
+</section><!-- /sh-form-section -->
+
+    <!-- ── WHY CHOOSE US ── -->
+    <!-- ============================================================
+     SUCCESSTRACKER — WHY CHOOSE US SECTION
+     Replace existing: <section class="why-bg" id="why-us"> ... </section>
+     Ends before the How It Works section.
+     ============================================================ -->
+
+<section class="sw-section" id="why-us" aria-labelledby="sw-heading">
+  <div class="sw-inner">
+
+    <!-- Section Header -->
+    <div class="sw-header">
+      <div class="sw-eyebrow" aria-hidden="true">Why Choose Us</div>
+      <h2 class="sw-title" id="sw-heading">
+        Why Thousands of Parents <span class="sw-title-accent">Trust SuccessTracker</span>
+      </h2>
+      <div class="sw-header-rule" aria-hidden="true"></div>
+      <p class="sw-subtitle">
+        Personalized home tuition with verified tutors, transparent guidance
+        and continuous learning support — built to give every parent complete confidence.
+      </p>
+    </div>
+
+    <!-- Cards Grid -->
+    <div class="sw-grid" role="list">
+
+      <!-- Card 1: Verified Tutors -->
+      <article class="sw-card" role="listitem">
+        <div class="sw-card-icon sw-icon-green" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor"
+               stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
+            <polyline points="9 12 11 14 15 10"/>
+          </svg>
+        </div>
+        <div class="sw-card-body">
+          <h3 class="sw-card-title">Verified Tutors</h3>
+          <p class="sw-card-desc">
+            Background Verification &amp; Quality Checked Teachers.
+          </p>
+        </div>
+        <div class="sw-card-arrow" aria-hidden="true">
+          <svg viewBox="0 0 16 16" fill="none" stroke="currentColor"
+               stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M3 8h10M9 4l4 4-4 4"/>
+          </svg>
+        </div>
+      </article>
+
+      <!-- Card 2: Free Demo Class -->
+      <article class="sw-card" role="listitem">
+        <div class="sw-card-icon sw-icon-amber" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor"
+               stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+            <circle cx="12" cy="12" r="10"/>
+            <polygon points="10 8 16 12 10 16 10 8" fill="currentColor"
+                     stroke="none" opacity=".85"/>
+          </svg>
+        </div>
+        <div class="sw-card-body">
+          <h3 class="sw-card-title">Free Demo Class</h3>
+          <p class="sw-card-desc">
+            Try Before You Decide.
+          </p>
+        </div>
+        <div class="sw-card-arrow" aria-hidden="true">
+          <svg viewBox="0 0 16 16" fill="none" stroke="currentColor"
+               stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M3 8h10M9 4l4 4-4 4"/>
+          </svg>
+        </div>
+      </article>
+
+      <!-- Card 3: One-to-One Learning -->
+      <article class="sw-card" role="listitem">
+        <div class="sw-card-icon sw-icon-blue" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor"
+               stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/>
+            <circle cx="9" cy="7" r="4"/>
+            <path d="M23 21v-2a4 4 0 00-3-3.87"/>
+            <path d="M16 3.13a4 4 0 010 7.75"/>
+          </svg>
+        </div>
+        <div class="sw-card-body">
+          <h3 class="sw-card-title">One-to-One Learning</h3>
+          <p class="sw-card-desc">
+            100% Personal Attention.
+          </p>
+        </div>
+        <div class="sw-card-arrow" aria-hidden="true">
+          <svg viewBox="0 0 16 16" fill="none" stroke="currentColor"
+               stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M3 8h10M9 4l4 4-4 4"/>
+          </svg>
+        </div>
+      </article>
+
+      <!-- Card 4: Flexible Timings -->
+      <article class="sw-card" role="listitem">
+        <div class="sw-card-icon sw-icon-purple" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor"
+               stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+            <circle cx="12" cy="12" r="10"/>
+            <polyline points="12 6 12 12 16 14"/>
+          </svg>
+        </div>
+        <div class="sw-card-body">
+          <h3 class="sw-card-title">Flexible Timings</h3>
+          <p class="sw-card-desc">
+            Morning, Evening &amp; Weekend Classes.
+          </p>
+        </div>
+        <div class="sw-card-arrow" aria-hidden="true">
+          <svg viewBox="0 0 16 16" fill="none" stroke="currentColor"
+               stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M3 8h10M9 4l4 4-4 4"/>
+          </svg>
+        </div>
+      </article>
+
+      <!-- Card 5: All Subjects -->
+      <article class="sw-card" role="listitem">
+        <div class="sw-card-icon sw-icon-rose" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor"
+               stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M4 19.5A2.5 2.5 0 016.5 17H20"/>
+            <path d="M6.5 2H20v20H6.5A2.5 2.5 0 014 19.5v-15A2.5 2.5 0 016.5 2z"/>
+            <line x1="9"  y1="7"  x2="15" y2="7"/>
+            <line x1="9"  y1="11" x2="15" y2="11"/>
+            <line x1="9"  y1="15" x2="12" y2="15"/>
+          </svg>
+        </div>
+        <div class="sw-card-body">
+          <h3 class="sw-card-title">All Subjects</h3>
+          <p class="sw-card-desc">
+            Nursery to Class 12, CBSE, RBSE &amp; Competitive Exams.
+          </p>
+        </div>
+        <div class="sw-card-arrow" aria-hidden="true">
+          <svg viewBox="0 0 16 16" fill="none" stroke="currentColor"
+               stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M3 8h10M9 4l4 4-4 4"/>
+          </svg>
+        </div>
+      </article>
+
+      <!-- Card 6: Home Tuition Across Jaipur -->
+      <article class="sw-card" role="listitem">
+        <div class="sw-card-icon sw-icon-teal" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor"
+               stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M21 10c0 7-9 13-9 13S3 17 3 10a9 9 0 0118 0z"/>
+            <circle cx="12" cy="10" r="3"/>
+          </svg>
+        </div>
+        <div class="sw-card-body">
+          <h3 class="sw-card-title">Home Tuition Across Jaipur</h3>
+          <p class="sw-card-desc">
+            Available in Major Areas of Jaipur.
+          </p>
+        </div>
+        <div class="sw-card-arrow" aria-hidden="true">
+          <svg viewBox="0 0 16 16" fill="none" stroke="currentColor"
+               stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M3 8h10M9 4l4 4-4 4"/>
+          </svg>
+        </div>
+      </article>
+
+    </div><!-- /sw-grid -->
+
+    <!-- Bottom CTA -->
+    <div class="sw-cta-row">
+      <a href="#book" class="sw-cta-btn">
+        Book Demo
+        <svg viewBox="0 0 16 16" fill="none" stroke="currentColor"
+             stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+             width="14" height="14" aria-hidden="true">
+          <path d="M3 8h10M9 4l4 4-4 4"/>
+        </svg>
+      </a>
+    </div>
+
+  </div><!-- /sw-inner -->
+</section>
+
+    <!-- ── SUBJECTS WE COVER ── -->
+    <!-- ============================================================
+     SUCCESSTRACKER — SUBJECTS SECTION
+     Place after Why Us, before How It Works.
+     id="subjects" preserved for navbar links.
+     ============================================================ -->
+
+<section class="ss-section" id="subjects" aria-labelledby="ss-heading">
+  <div class="ss-inner">
+
+    <!-- Section Header -->
+    <div class="ss-header">
+      <div class="ss-eyebrow" aria-hidden="true">Subjects We Teach</div>
+      <div class="ss-header-rule" aria-hidden="true"></div>
+      <h2 class="ss-title" id="ss-heading">
+        Subjects <span class="ss-title-accent">We Teach</span>
+      </h2>
+      <p class="ss-subtitle">
+        From Foundation Classes to Competitive Exam Preparation, our experienced
+        tutors help students build strong concepts and achieve excellent academic results.
+      </p>
+    </div>
+
+    <!-- Subjects Grid: 4 col desktop / 2 tablet / 1 mobile -->
+    <div class="ss-grid" role="list" aria-label="Available subjects">
+
+      <!-- 1: Mathematics -->
+      <a href="#book" class="ss-card" role="listitem" aria-label="Book Mathematics tutor">
+        <div class="ss-card-inner">
+          <div class="ss-icon-wrap ss-indigo" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                 stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+              <line x1="12" y1="5"  x2="12" y2="19"/>
+              <line x1="5"  y1="12" x2="19" y2="12"/>
+              <rect x="2" y="2" width="8" height="8" rx="1.5"/>
+              <rect x="14" y="14" width="8" height="8" rx="1.5"/>
+            </svg>
+          </div>
+          <span class="ss-name">Mathematics</span>
+          <span class="ss-desc">Build strong concepts with personalized home tuition.</span>
+          <span class="ss-hover-arrow" aria-hidden="true">→</span>
+        </div>
+      </a>
+
+      <!-- 2: Physics -->
+      <a href="#book" class="ss-card" role="listitem" aria-label="Book Physics tutor">
+        <div class="ss-card-inner">
+          <span class="ss-badge ss-badge-jee">IIT-JEE</span>
+          <div class="ss-icon-wrap ss-blue" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                 stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+              <ellipse cx="12" cy="12" rx="10" ry="3.5"/>
+              <ellipse cx="12" cy="12" rx="10" ry="3.5" transform="rotate(60 12 12)"/>
+              <ellipse cx="12" cy="12" rx="10" ry="3.5" transform="rotate(120 12 12)"/>
+              <circle cx="12" cy="12" r="1.8" fill="currentColor"/>
+            </svg>
+          </div>
+          <span class="ss-name">Physics</span>
+          <span class="ss-desc">Concept-based learning for school and competitive exams.</span>
+          <span class="ss-hover-arrow" aria-hidden="true">→</span>
+        </div>
+      </a>
+
+      <!-- 3: Chemistry -->
+      <a href="#book" class="ss-card" role="listitem" aria-label="Book Chemistry tutor">
+        <div class="ss-card-inner">
+          <span class="ss-badge ss-badge-jeeneet">IIT-JEE / NEET</span>
+          <div class="ss-icon-wrap ss-amber" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                 stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M9 3v10.5a6 6 0 0012 0V3"/>
+              <line x1="9" y1="3" x2="21" y2="3"/>
+              <line x1="9" y1="9" x2="21" y2="9"/>
+              <circle cx="16" cy="17" r="1.5" fill="currentColor" opacity=".6"/>
+            </svg>
+          </div>
+          <span class="ss-name">Chemistry</span>
+          <span class="ss-desc">Master numerical, organic and inorganic chemistry.</span>
+          <span class="ss-hover-arrow" aria-hidden="true">→</span>
+        </div>
+      </a>
+
+      <!-- 4: Biology -->
+      <a href="#book" class="ss-card" role="listitem" aria-label="Book Biology tutor">
+        <div class="ss-card-inner">
+          <span class="ss-badge ss-badge-neet">NEET</span>
+          <div class="ss-icon-wrap ss-emerald" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                 stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M12 22V12m0 0C12 8 8 4 3 4c0 5 3 9 9 8zm0 0c0-4 4-8 9-8 0 5-3 9-9 8z"/>
+            </svg>
+          </div>
+          <span class="ss-name">Biology</span>
+          <span class="ss-desc">Perfect for school, NEET and foundation preparation.</span>
+          <span class="ss-hover-arrow" aria-hidden="true">→</span>
+        </div>
+      </a>
+
+      <!-- 5: English -->
+      <a href="#book" class="ss-card" role="listitem" aria-label="Book English tutor">
+        <div class="ss-card-inner">
+          <div class="ss-icon-wrap ss-sky" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                 stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+              <polyline points="4 7 4 4 20 4 20 7"/>
+              <line x1="9"  y1="20" x2="15" y2="20"/>
+              <line x1="12" y1="4"  x2="12" y2="20"/>
+            </svg>
+          </div>
+          <span class="ss-name">English</span>
+          <span class="ss-desc">Grammar, writing, speaking and literature.</span>
+          <span class="ss-hover-arrow" aria-hidden="true">→</span>
+        </div>
+      </a>
+
+      <!-- 6: Science -->
+      <a href="#book" class="ss-card" role="listitem" aria-label="Book Science tutor">
+        <div class="ss-card-inner">
+          <div class="ss-icon-wrap ss-green" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                 stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M10 2v7.5L5 19a2 2 0 001.8 3h10.4A2 2 0 0019 19l-5-9.5V2"/>
+              <line x1="8.5" y1="2" x2="15.5" y2="2"/>
+              <circle cx="14" cy="15" r="1.2" fill="currentColor"/>
+            </svg>
+          </div>
+          <span class="ss-name">Science</span>
+          <span class="ss-desc">Complete support for middle school science.</span>
+          <span class="ss-hover-arrow" aria-hidden="true">→</span>
+        </div>
+      </a>
+
+      <!-- 7: Computer Science -->
+      <a href="#book" class="ss-card" role="listitem" aria-label="Book Computer Science tutor">
+        <div class="ss-card-inner">
+          <div class="ss-icon-wrap ss-violet" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                 stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+              <rect x="2" y="3" width="20" height="14" rx="2"/>
+              <line x1="8"  y1="21" x2="16" y2="21"/>
+              <line x1="12" y1="17" x2="12" y2="21"/>
+              <polyline points="7 10 10 13 17 7"/>
+            </svg>
+          </div>
+          <span class="ss-name">Computer Science</span>
+          <span class="ss-desc">Programming fundamentals and computer applications.</span>
+          <span class="ss-hover-arrow" aria-hidden="true">→</span>
+        </div>
+      </a>
+
+      <!-- 8: Commerce -->
+      <a href="#book" class="ss-card" role="listitem" aria-label="Book Commerce tutor">
+        <div class="ss-card-inner">
+          <div class="ss-icon-wrap ss-rose" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                 stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+              <line x1="12" y1="1"  x2="12" y2="23"/>
+              <path d="M17 5H9.5a3.5 3.5 0 000 7h5a3.5 3.5 0 010 7H6"/>
+            </svg>
+          </div>
+          <span class="ss-name">Commerce</span>
+          <span class="ss-desc">Accounts, Economics and Business Studies.</span>
+          <span class="ss-hover-arrow" aria-hidden="true">→</span>
+        </div>
+      </a>
+
+    </div><!-- /ss-grid -->
+
+    <!-- Bottom Callout -->
+    <div class="ss-callout">
+      <div class="ss-callout-left">
+        <span class="ss-callout-icon" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor"
+               stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"
+               width="22" height="22">
+            <circle cx="12" cy="12" r="10"/>
+            <path d="M9.09 9a3 3 0 015.83 1c0 2-3 3-3 3"/>
+            <line x1="12" y1="17" x2="12.01" y2="17"/>
+          </svg>
+        </span>
+        <div>
+          <p class="ss-callout-title">Need help choosing the right subject?</p>
+          <p class="ss-callout-sub">Our academic counsellor will help you select the best tutor based on your child's learning goals.</p>
+        </div>
+      </div>
+      <a href="#book" class="ss-callout-btn">
+        Book Demo
+        <svg viewBox="0 0 16 16" fill="none" stroke="currentColor"
+             stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"
+             width="14" height="14" aria-hidden="true">
+          <path d="M3 8h10M9 4l4 4-4 4"/>
+        </svg>
+      </a>
+    </div>
+
+  </div><!-- /ss-inner -->
+</section>
+
+    <!-- ── HOW IT WORKS ── -->
+    <!-- ================================================
+     HOW IT WORKS SECTION - SuccessTracker
+     Pure HTML/CSS/JS | Mobile First | Green Accent
+     Include how-it-works.css in <head> and
+     how-it-works.js before </body>.
+     Self-contained — does not alter any other section.
+     IDs preserved for JS: #how-it-works, #how, #hiwDemoBtn
+================================================= -->
+
+<section class="hiw-section" id="how-it-works">
+  <a id="how" class="visually-hidden" aria-hidden="true" tabindex="-1"></a>
+  <div class="hiw-container">
+
+    <!-- Section Heading -->
+    <div class="hiw-heading">
+      <span class="hiw-tag">Process</span>
+      <h2 class="hiw-title">How SuccessTracker Works</h2>
+      <p class="hiw-subtitle">
+        Finding the right home tutor is simple. Our academic team helps you
+        at every step to ensure the best learning experience for your child.
+      </p>
+    </div>
+
+    <!-- Timeline -->
+    <div class="hiw-timeline">
+
+      <div class="hiw-step">
+        <div class="hiw-step-marker">
+          <span class="hiw-number">01</span>
+          <svg class="hiw-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+               stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <rect x="3" y="4" width="18" height="18" rx="3"/>
+            <line x1="16" y1="2" x2="16" y2="6"/>
+            <line x1="8" y1="2" x2="8" y2="6"/>
+            <line x1="3" y1="10" x2="21" y2="10"/>
+          </svg>
+        </div>
+        <div class="hiw-step-card">
+          <h3 class="hiw-step-title">Book Demo</h3>
+          <p class="hiw-step-text">Schedule a demo class or consultation by filling out a simple form or contacting our team.</p>
+        </div>
+      </div>
+
+      <div class="hiw-step">
+        <div class="hiw-step-marker">
+          <span class="hiw-number">02</span>
+          <svg class="hiw-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+               stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/>
+            <circle cx="9" cy="7" r="4"/>
+            <path d="M23 21v-2a4 4 0 0 0-3-3.87"/>
+            <path d="M16 3.13a4 4 0 0 1 0 7.75"/>
+          </svg>
+        </div>
+        <div class="hiw-step-card">
+          <h3 class="hiw-step-title">Academic Counselling</h3>
+          <p class="hiw-step-text">Our counsellor understands your child's learning goals and recommends the most suitable study plan.</p>
+        </div>
+      </div>
+
+      <div class="hiw-step">
+        <div class="hiw-step-marker">
+          <span class="hiw-number">03</span>
+          <svg class="hiw-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+               stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/>
+            <circle cx="9" cy="7" r="4"/>
+            <polyline points="17 11 19 13 23 9"/>
+          </svg>
+        </div>
+        <div class="hiw-step-card">
+          <h3 class="hiw-step-title">Tutor Matching</h3>
+          <p class="hiw-step-text">We carefully match your child with a verified tutor based on subject, class, learning style and availability.</p>
+        </div>
+      </div>
+
+      <div class="hiw-step">
+        <div class="hiw-step-marker">
+          <span class="hiw-number">04</span>
+          <svg class="hiw-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+               stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <path d="M4.5 16.5c-1.5 1.26-2 5-2 5s3.74-.5 5-2c.71-.84.7-2.13-.09-2.91a2.18 2.18 0 0 0-2.91-.09z"/>
+            <path d="M12 15l-3-3a22 22 0 0 1 2-3.95A12.88 12.88 0 0 1 22 2c0 2.72-.78 7.5-6 11a22.35 22.35 0 0 1-4 2z"/>
+            <path d="M9 12H4s.55-3.03 2-4c1.62-1.08 5 0 5 0"/>
+            <path d="M12 15v5s3.03-.55 4-2c1.08-1.62 0-5 0-5"/>
+          </svg>
+        </div>
+        <div class="hiw-step-card">
+          <h3 class="hiw-step-title">Start Learning</h3>
+          <p class="hiw-step-text">Begin personalized home tuition with regular progress updates and continuous parent support.</p>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- Bottom CTA Card -->
+    <div class="hiw-cta">
+      <h3 class="hiw-cta-title">Ready to Find the Right Tutor?</h3>
+      <p class="hiw-cta-text">
+        Book a demo today and let our academic experts help you choose the perfect tutor for your child.
+      </p>
+      <div class="hiw-cta-actions">
+        <button type="button" class="hiw-cta-btn-primary" id="hiwDemoBtn">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+               stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <rect x="3" y="4" width="18" height="18" rx="2"/>
+            <line x1="16" y1="2" x2="16" y2="6"/>
+            <line x1="8" y1="2" x2="8" y2="6"/>
+            <line x1="3" y1="10" x2="21" y2="10"/>
+          </svg>
+          Book Demo
+        </button>
+        <a href="#counselling" class="hiw-cta-btn-secondary">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+               stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/>
+          </svg>
+          Contact Us
+        </a>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+    <!-- ── FREE COUNSELLING ── -->
+    <!-- ============================================================
+     SUCCESSTRACKER — FREE COUNSELLING SECTION
+     New section per master prompt. Posts to the SAME existing
+     backend endpoint used by the Hero quick form
+     (https://success-tracker-backend.onrender.com/api/counselling)
+     with the same field contract: { name, phone, grade, concern }.
+     Uses its own "cs_" prefixed IDs so it never collides with the
+     Hero form's "sh_" IDs. id="counselling" matches the header's
+     existing "Free Counselling" nav link (href="#counselling").
+     ============================================================ -->
+
+<section class="cs-section" id="counselling" aria-labelledby="cs-heading">
+  <div class="cs-grid">
+
+    <!-- ── LEFT: Pitch panel ── -->
+    <div class="cs-left">
+      <div class="cs-left-inner">
+        <span class="cs-badge">FREE ACADEMIC GUIDANCE</span>
+
+        <h2 class="cs-heading" id="cs-heading">
+          Book a Free<br>
+          <span class="cs-heading-accent">Counselling Session</span>
+        </h2>
+
+        <p class="cs-copy">
+          Not sure which tutor or learning plan is the best fit for your child?
+          Speak with our experienced academic counsellors for personalized
+          guidance — completely free, with no obligation.
+        </p>
+
+        <ul class="cs-points" role="list">
+          <li class="cs-point">
+            <span class="cs-point-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"
+                   stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+            </span>
+            Understand your child's learning strengths and academic needs.
+          </li>
+          <li class="cs-point">
+            <span class="cs-point-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"
+                   stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+            </span>
+            Get personalized subject and verified tutor recommendations.
+          </li>
+          <li class="cs-point">
+            <span class="cs-point-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"
+                   stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+            </span>
+            Receive transparent fee details before making any decision.
+          </li>
+          <li class="cs-point">
+            <span class="cs-point-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"
+                   stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+            </span>
+            Available 7 days a week from 9:00 AM to 8:00 PM.
+          </li>
+          <li class="cs-point">
+            <span class="cs-point-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"
+                   stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+            </span>
+            Choose your preferred consultation via Online or Offline.
+          </li>
+        </ul>
+
+        <!-- Trust strip -->
+        <div class="cs-trust-strip" role="note" aria-label="Trust assurances">
+          <span class="cs-trust-item">100% Free</span>
+          <span class="cs-trust-dot" aria-hidden="true">•</span>
+          <span class="cs-trust-item">No Hidden Charges</span>
+          <span class="cs-trust-dot" aria-hidden="true">•</span>
+          <span class="cs-trust-item">No Spam Calls</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- ── RIGHT: Form panel ── -->
+    <div class="cs-right">
+      <div class="cs-form-card">
+
+        <div class="cs-form-header">
+          <div class="cs-form-icon" aria-hidden="true">💬</div>
+          <div>
+            <p class="cs-form-title">Request Free Counselling</p>
+            <p class="cs-form-sub">Fill in your details — our counsellor will call you within 1 hour.</p>
+          </div>
+        </div>
+
+        <form class="cs-form" id="cs-form" novalidate>
+
+          <div class="cs-fields-row">
+            <div class="cs-field">
+              <label for="cs_name" class="cs-label">Your Name *</label>
+              <input type="text" id="cs_name" name="cs_name"
+                     class="cs-input" placeholder="e.g. Sunita Verma"
+                     autocomplete="name" required />
+            </div>
+            <div class="cs-field">
+              <label for="cs_phone" class="cs-label">WhatsApp Number *</label>
+              <input type="tel" id="cs_phone" name="cs_phone"
+                     class="cs-input" placeholder="e.g. 9876543210"
+                     autocomplete="tel" required pattern="[6-9][0-9]{9}" />
+            </div>
+          </div>
+
+          <div class="cs-field">
+            <label for="cs_grade" class="cs-label">Child's Grade *</label>
+            <select id="cs_grade" name="cs_grade" class="cs-input cs-select" required>
+              <option value="">Select Grade</option>
+              <option>Nursery – KG</option>
+              <option>Class 1 – 2</option>
+              <option>Class 3 – 5</option>
+              <option>Class 6 – 8</option>
+              <option>Class 9 – 10</option>
+              <option>Class 11 – 12</option>
+            </select>
+          </div>
+
+          <div class="cs-field">
+            <label for="cs_concern" class="cs-label">Main Concern *</label>
+            <select id="cs_concern" name="cs_concern" class="cs-input cs-select" required>
+              <option value="">Select a concern</option>
+              <option>Choosing the right subject</option>
+              <option>Finding the right tutor</option>
+              <option>Understanding fee structure</option>
+              <option>Flexible timing / scheduling</option>
+              <option>Improving exam scores</option>
+              <option>Other</option>
+            </select>
+          </div>
+
+          <button type="submit" class="cs-submit" id="cs-submit-btn">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none"
+                 stroke="currentColor" stroke-width="2.2"
+                 stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <rect x="3" y="4" width="18" height="18" rx="2"/>
+              <line x1="16" y1="2" x2="16" y2="6"/>
+              <line x1="8"  y1="2" x2="8"  y2="6"/>
+              <line x1="3"  y1="10" x2="21" y2="10"/>
+            </svg>
+            Request Free Counselling
+          </button>
+
+          <p class="cs-footnote">
+            🔒 Your details are safe with us. We never share your information.
+          </p>
+
+          <div class="cs-success" id="cs-success" role="alert" aria-live="polite" hidden>
+            ✅ Done! Our counsellor will call you within 1 hour.
+          </div>
+
+        </form>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+    <!-- ── AREAS WE SERVE ── -->
+    <!-- ================================================
+     AREAS WE SERVE SECTION - SuccessTracker
+     Pure HTML/CSS/JS | Mobile First | Green Accent
+     Include areas.css in <head> and areas.js before </body>
+     This section is self-contained and does not alter
+     Header, Hero, or any previous sections.
+================================================= -->
+
+<section class="areas-section" id="areas-we-serve">
+  <div class="areas-container">
+
+    <!-- Section Heading -->
+    <div class="areas-heading" data-aos="fade-up">
+      <span class="areas-tag">
+        <svg class="areas-tag-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+             stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/>
+          <circle cx="12" cy="10" r="3"/>
+        </svg>
+        Available Across Jaipur
+      </span>
+      <h2 class="areas-title">Areas We Serve</h2>
+      <p class="areas-subtitle">
+        Our verified home tutors are available across Jaipur, helping students
+        learn comfortably at home with personalized one-to-one guidance.
+      </p>
+    </div>
+
+    <!-- Location Cards Grid -->
+    <div class="areas-grid">
+
+      <div class="area-card">
+        <div class="area-icon" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+               stroke-linecap="round" stroke-linejoin="round">
+            <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/>
+            <circle cx="12" cy="10" r="3"/>
+          </svg>
+        </div>
+        <h3 class="area-name">Vaishali Nagar</h3>
+        <p class="area-desc">Personalized home tuition with verified tutors.</p>
+      </div>
+
+      <div class="area-card">
+        <div class="area-icon" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+               stroke-linecap="round" stroke-linejoin="round">
+            <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/>
+            <circle cx="12" cy="10" r="3"/>
+          </svg>
+        </div>
+        <h3 class="area-name">Mansarovar</h3>
+        <p class="area-desc">Experienced tutors available for all classes and competitive exams.</p>
+      </div>
+
+      <div class="area-card">
+        <div class="area-icon" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+               stroke-linecap="round" stroke-linejoin="round">
+            <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/>
+            <circle cx="12" cy="10" r="3"/>
+          </svg>
+        </div>
+        <h3 class="area-name">Malviya Nagar</h3>
+        <p class="area-desc">Expert tutors for school curriculum and IIT-JEE / NEET preparation.</p>
+      </div>
+
+      <div class="area-card">
+        <div class="area-icon" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+               stroke-linecap="round" stroke-linejoin="round">
+            <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/>
+            <circle cx="12" cy="10" r="3"/>
+          </svg>
+        </div>
+        <h3 class="area-name">Jagatpura</h3>
+        <p class="area-desc">Qualified tutors for CBSE, RBSE and foundation classes.</p>
+      </div>
+
+      <div class="area-card">
+        <div class="area-icon" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+               stroke-linecap="round" stroke-linejoin="round">
+            <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/>
+            <circle cx="12" cy="10" r="3"/>
+          </svg>
+        </div>
+        <h3 class="area-name">Raja Park</h3>
+        <p class="area-desc">Personal attention and flexible study schedules.</p>
+      </div>
+
+      <div class="area-card">
+        <div class="area-icon" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+               stroke-linecap="round" stroke-linejoin="round">
+            <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/>
+            <circle cx="12" cy="10" r="3"/>
+          </svg>
+        </div>
+        <h3 class="area-name">C-Scheme</h3>
+        <p class="area-desc">Premium home tutors for central Jaipur families.</p>
+      </div>
+
+      <div class="area-card">
+        <div class="area-icon" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+               stroke-linecap="round" stroke-linejoin="round">
+            <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/>
+            <circle cx="12" cy="10" r="3"/>
+          </svg>
+        </div>
+        <h3 class="area-name">Jhotwara</h3>
+        <p class="area-desc">Reliable home tuition for school and board exam success.</p>
+      </div>
+
+      <div class="area-card">
+        <div class="area-icon" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+               stroke-linecap="round" stroke-linejoin="round">
+            <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/>
+            <circle cx="12" cy="10" r="3"/>
+          </svg>
+        </div>
+        <h3 class="area-name">Vidyadhar Nagar</h3>
+        <p class="area-desc">Concept-based learning with experienced home tutors.</p>
+      </div>
+
+      <div class="area-card">
+        <div class="area-icon" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+               stroke-linecap="round" stroke-linejoin="round">
+            <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/>
+            <circle cx="12" cy="10" r="3"/>
+          </svg>
+        </div>
+        <h3 class="area-name">Pratap Nagar</h3>
+        <p class="area-desc">Dedicated tutors for consistent academic progress.</p>
+      </div>
+
+      <div class="area-card">
+        <div class="area-icon" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+               stroke-linecap="round" stroke-linejoin="round">
+            <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/>
+            <circle cx="12" cy="10" r="3"/>
+          </svg>
+        </div>
+        <h3 class="area-name">Sanganer</h3>
+        <p class="area-desc">Trusted home tutors for all subjects and grade levels.</p>
+      </div>
+
+      <div class="area-card">
+        <div class="area-icon" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+               stroke-linecap="round" stroke-linejoin="round">
+            <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/>
+            <circle cx="12" cy="10" r="3"/>
+          </svg>
+        </div>
+        <h3 class="area-name">Tonk Road</h3>
+        <p class="area-desc">Convenient home tuition with experienced local tutors.</p>
+      </div>
+
+      <div class="area-card">
+        <div class="area-icon" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+               stroke-linecap="round" stroke-linejoin="round">
+            <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/>
+            <circle cx="12" cy="10" r="3"/>
+          </svg>
+        </div>
+        <h3 class="area-name">Ajmer Road</h3>
+        <p class="area-desc">Quality home tutors matched to your child's learning pace.</p>
+      </div>
+
+    </div>
+
+    <!-- "Don't See Your Area?" Banner -->
+    <div class="areas-banner">
+      <div class="areas-banner-text">
+        <h3 class="areas-banner-title">Don't See Your Area?</h3>
+        <p class="areas-banner-sub">
+          We are continuously expanding our network of verified tutors across Jaipur.
+          Contact us to check tutor availability in your location.
+        </p>
+      </div>
+      <button type="button" class="areas-banner-btn" id="areasDemoBtn">
+        Contact Us
+        <svg viewBox="0 0 16 16" fill="none" stroke="currentColor"
+             stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"
+             width="14" height="14" aria-hidden="true">
+          <path d="M3 8h10M9 4l4 4-4 4"/>
+        </svg>
+      </button>
+    </div>
+
+    <!-- Trust Strip -->
+    <div class="areas-trust-strip" role="list" aria-label="Service assurances">
+      <span class="areas-trust-item" role="listitem">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"
+             stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>
+        Verified Tutors
+      </span>
+      <span class="areas-trust-item" role="listitem">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"
+             stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>
+        Flexible Timings
+      </span>
+      <span class="areas-trust-item" role="listitem">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"
+             stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>
+        Personalized Learning
+      </span>
+      <span class="areas-trust-item" role="listitem">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"
+             stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>
+        Home Visits Available
+      </span>
+    </div>
+
+  </div>
+</section>
+
+    <!-- ── PARENT REVIEWS ── -->
+    <!-- ================================================
+     PARENT REVIEWS SECTION - SuccessTracker
+     Pure HTML/CSS/JS | Mobile First | Green Accent
+     Include reviews.css in <head> and reviews.js before </body>
+     Self-contained — does not alter any other section.
+
+     NOTE: No real parent reviews exist yet, so this section
+     honestly shows a "Coming Soon" state with clearly-labeled
+     placeholder cards rather than fabricated testimonials.
+     Swap this block for real reviews once they're collected.
+================================================= -->
+
+<section class="reviews-section" id="parent-testimonials">
+  <div class="reviews-container">
+
+    <!-- Section Heading -->
+    <div class="reviews-heading">
+      <span class="reviews-tag">
+        <svg class="reviews-tag-icon" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+          <path d="M12 21s-6.7-4.35-9.3-8.2C1.02 10.4 1.6 7.2 4.2 5.6c2.2-1.35 4.9-.8 6.4 1.1l1.4 1.8 1.4-1.8c1.5-1.9 4.2-2.45 6.4-1.1 2.6 1.6 3.18 4.8 1.5 7.2C18.7 16.65 12 21 12 21z"/>
+        </svg>
+        Trusted by Parents
+      </span>
+      <h2 class="reviews-title">What Parents Say About SuccessTracker</h2>
+      <p class="reviews-subtitle">
+        Parents trust SuccessTracker for personalized home tuition, verified tutors
+        and continuous academic support.
+      </p>
+    </div>
+
+    <!-- Verified Parent Testimonials -->
+    <div class="reviews-grid">
+
+      <div class="review-card">
+        <div class="review-stars" aria-label="5 out of 5 stars">
+          <svg viewBox="0 0 24 24" fill="currentColor"><polygon points="12 2 15 9 22 9.5 17 14.5 18.5 21.5 12 17.8 5.5 21.5 7 14.5 2 9.5 9 9"/></svg>
+          <svg viewBox="0 0 24 24" fill="currentColor"><polygon points="12 2 15 9 22 9.5 17 14.5 18.5 21.5 12 17.8 5.5 21.5 7 14.5 2 9.5 9 9"/></svg>
+          <svg viewBox="0 0 24 24" fill="currentColor"><polygon points="12 2 15 9 22 9.5 17 14.5 18.5 21.5 12 17.8 5.5 21.5 7 14.5 2 9.5 9 9"/></svg>
+          <svg viewBox="0 0 24 24" fill="currentColor"><polygon points="12 2 15 9 22 9.5 17 14.5 18.5 21.5 12 17.8 5.5 21.5 7 14.5 2 9.5 9 9"/></svg>
+          <svg viewBox="0 0 24 24" fill="currentColor"><polygon points="12 2 15 9 22 9.5 17 14.5 18.5 21.5 12 17.8 5.5 21.5 7 14.5 2 9.5 9 9"/></svg>
+        </div>
+        <p class="review-quote">
+          "We were looking for a dedicated Physics and Chemistry tutor for our
+          son. SuccessTracker helped us find the right tutor, and we are very
+          happy with the personalized guidance and regular progress updates."
+        </p>
+        <div class="review-parent">
+          <div class="review-avatar">MS</div>
+          <div class="review-parent-info">
+            <h4 class="review-parent-name">Miss Monika Sharma</h4>
+            <p class="review-meta">
+              Parent of Manan Sharma · Class 11th<br />
+              Physics &amp; Chemistry (NCERT / NEET) · Gopalpura, Jaipur
+            </p>
+          </div>
+          <span class="review-verified-badge">Verified Parent</span>
+        </div>
+      </div>
+
+      <div class="review-card">
+        <div class="review-stars" aria-label="5 out of 5 stars">
+          <svg viewBox="0 0 24 24" fill="currentColor"><polygon points="12 2 15 9 22 9.5 17 14.5 18.5 21.5 12 17.8 5.5 21.5 7 14.5 2 9.5 9 9"/></svg>
+          <svg viewBox="0 0 24 24" fill="currentColor"><polygon points="12 2 15 9 22 9.5 17 14.5 18.5 21.5 12 17.8 5.5 21.5 7 14.5 2 9.5 9 9"/></svg>
+          <svg viewBox="0 0 24 24" fill="currentColor"><polygon points="12 2 15 9 22 9.5 17 14.5 18.5 21.5 12 17.8 5.5 21.5 7 14.5 2 9.5 9 9"/></svg>
+          <svg viewBox="0 0 24 24" fill="currentColor"><polygon points="12 2 15 9 22 9.5 17 14.5 18.5 21.5 12 17.8 5.5 21.5 7 14.5 2 9.5 9 9"/></svg>
+          <svg viewBox="0 0 24 24" fill="currentColor"><polygon points="12 2 15 9 22 9.5 17 14.5 18.5 21.5 12 17.8 5.5 21.5 7 14.5 2 9.5 9 9"/></svg>
+        </div>
+        <p class="review-quote">
+          "The tutor explains concepts very clearly and my son's confidence in
+          Mathematics has improved significantly. The demo process was smooth
+          and professional."
+        </p>
+        <div class="review-parent">
+          <div class="review-avatar">SS</div>
+          <div class="review-parent-info">
+            <h4 class="review-parent-name">Suraj Soni</h4>
+            <p class="review-meta">
+              Parent of Gourav Soni · Class 10th<br />
+              Mathematics
+            </p>
+          </div>
+          <span class="review-verified-badge">Verified Parent</span>
+        </div>
+      </div>
+
+      <div class="review-card">
+        <div class="review-stars" aria-label="5 out of 5 stars">
+          <svg viewBox="0 0 24 24" fill="currentColor"><polygon points="12 2 15 9 22 9.5 17 14.5 18.5 21.5 12 17.8 5.5 21.5 7 14.5 2 9.5 9 9"/></svg>
+          <svg viewBox="0 0 24 24" fill="currentColor"><polygon points="12 2 15 9 22 9.5 17 14.5 18.5 21.5 12 17.8 5.5 21.5 7 14.5 2 9.5 9 9"/></svg>
+          <svg viewBox="0 0 24 24" fill="currentColor"><polygon points="12 2 15 9 22 9.5 17 14.5 18.5 21.5 12 17.8 5.5 21.5 7 14.5 2 9.5 9 9"/></svg>
+          <svg viewBox="0 0 24 24" fill="currentColor"><polygon points="12 2 15 9 22 9.5 17 14.5 18.5 21.5 12 17.8 5.5 21.5 7 14.5 2 9.5 9 9"/></svg>
+          <svg viewBox="0 0 24 24" fill="currentColor"><polygon points="12 2 15 9 22 9.5 17 14.5 18.5 21.5 12 17.8 5.5 21.5 7 14.5 2 9.5 9 9"/></svg>
+        </div>
+        <p class="review-quote">
+          "We wanted personal attention for our daughter and SuccessTracker
+          matched us with an excellent Science tutor. We appreciate the
+          professionalism and continuous support."
+        </p>
+        <div class="review-parent">
+          <div class="review-avatar">JP</div>
+          <div class="review-parent-info">
+            <h4 class="review-parent-name">Jagdishvar Prasad</h4>
+            <p class="review-meta">
+              Parent of Vedika · 9th Standard<br />
+              Science
+            </p>
+          </div>
+          <span class="review-verified-badge">Verified Parent</span>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- Trust Panel -->
+    <div class="reviews-trust-panel">
+      <h3 class="reviews-trust-title">Why Parents Trust SuccessTracker</h3>
+      <div class="reviews-trust-items">
+        <span class="reviews-trust-item">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"
+               stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>
+          Verified Tutors
+        </span>
+        <span class="reviews-trust-item">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"
+               stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>
+          Personalized Learning
+        </span>
+        <span class="reviews-trust-item">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"
+               stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>
+          Regular Progress Updates
+        </span>
+        <span class="reviews-trust-item">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"
+               stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>
+          Transparent Fee Structure
+        </span>
+      </div>
+    </div>
+
+    <!-- Bottom CTA -->
+    <div class="reviews-cta">
+      <h3 class="reviews-cta-title">Still have questions?</h3>
+      <p class="reviews-cta-text">
+        Book a free counselling session and our academic experts will help you choose the right tutor.
+      </p>
+      <div class="reviews-cta-actions">
+        <button type="button" class="reviews-cta-btn" id="reviewsDemoBtn">
+          Book Demo
+        </button>
+        <a href="https://wa.me/917688864855" target="_blank" rel="noopener noreferrer" class="reviews-cta-btn-secondary">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+            <path d="M17.5 14.4c-.3-.15-1.7-.85-2-.95-.3-.1-.5-.15-.7.15-.2.3-.8.95-1 1.15-.2.2-.35.2-.65.05-.3-.15-1.3-.5-2.5-1.55-.9-.8-1.55-1.8-1.7-2.1-.2-.3 0-.45.15-.6.15-.15.3-.35.45-.5.15-.2.2-.3.3-.5.1-.2.05-.4 0-.55-.05-.15-.65-1.6-.9-2.2-.25-.55-.5-.5-.7-.5-.2 0-.4-.05-.6-.05-.2 0-.55.1-.85.4-.3.3-1.1 1.05-1.1 2.6s1.15 3.05 1.3 3.25c.15.2 2.25 3.5 5.5 4.75.8.3 1.4.5 1.9.65.8.25 1.5.2 2.1.15.65-.1 1.95-.8 2.2-1.55.3-.75.3-1.4.2-1.55-.1-.15-.3-.2-.6-.35z"/>
+            <path d="M12 2a10 10 0 0 0-8.55 15.15L2 22l4.95-1.4A10 10 0 1 0 12 2z"/>
+          </svg>
+          WhatsApp
+        </a>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+    <!-- ── FAQ ── -->
+    <!-- ================================================
+     FAQ SECTION - SuccessTracker
+     Pure HTML/CSS/JS | Mobile First | Green Accent
+     Include faq.css in <head> and faq.js before </body>
+     Self-contained — does not alter any other section.
+================================================= -->
+
+<section class="faq-section" id="faq-section">
+  <div class="faq-container">
+
+    <!-- Section Heading -->
+    <div class="faq-heading">
+      <span class="faq-tag">FAQs</span>
+      <h2 class="faq-title">Frequently Asked Questions</h2>
+    </div>
+
+    <!-- Accordion -->
+    <div class="faq-accordion">
+
+      <div class="faq-item">
+        <button class="faq-question" aria-expanded="false">
+          <span>How do I book a demo?</span>
+          <span class="faq-icon">+</span>
+        </button>
+        <div class="faq-answer">
+          <p>
+            Simply click on the "Book Demo" button on our website or
+            contact us via phone/WhatsApp. Our team will schedule a demo
+            session with a suitable tutor at your convenient time.
+          </p>
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-question" aria-expanded="false">
+          <span>Is the demo free?</span>
+          <span class="faq-icon">+</span>
+        </button>
+        <div class="faq-answer">
+          <p>
+            Yes, the first demo class is completely free with no obligation.
+            It helps you evaluate the tutor's teaching style before enrolling.
+          </p>
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-question" aria-expanded="false">
+          <span>How are tutors verified?</span>
+          <span class="faq-icon">+</span>
+        </button>
+        <div class="faq-answer">
+          <p>
+            Every tutor goes through a strict background check, document
+            verification, and a subject knowledge assessment before being
+            approved to teach on our platform.
+          </p>
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-question" aria-expanded="false">
+          <span>Can I change my tutor?</span>
+          <span class="faq-icon">+</span>
+        </button>
+        <div class="faq-answer">
+          <p>
+            Absolutely. If you're not satisfied with your assigned tutor, you
+            can request a replacement anytime and we will arrange a
+            suitable alternative promptly.
+          </p>
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-question" aria-expanded="false">
+          <span>Which classes do you cover?</span>
+          <span class="faq-icon">+</span>
+        </button>
+        <div class="faq-answer">
+          <p>
+            We provide home tuition for students from Class 1 to Class 12,
+            covering all major boards including CBSE, ICSE, and State Board.
+          </p>
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-question" aria-expanded="false">
+          <span>Which areas do you serve?</span>
+          <span class="faq-icon">+</span>
+        </button>
+        <div class="faq-answer">
+          <p>
+            We serve all major areas of Jaipur including Vaishali Nagar,
+            Mansarovar, Malviya Nagar, Jagatpura, C-Scheme, and many more
+            locations across the city.
+          </p>
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-question" aria-expanded="false">
+          <span>Do you provide online tuition?</span>
+          <span class="faq-icon">+</span>
+        </button>
+        <div class="faq-answer">
+          <p>
+            Yes, along with home tuition we also offer online tuition
+            options for students who prefer learning remotely.
+          </p>
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-question" aria-expanded="false">
+          <span>How much are the fees?</span>
+          <span class="faq-icon">+</span>
+        </button>
+        <div class="faq-answer">
+          <p>
+            Fees vary depending on the class, subject, and number of
+            sessions per week. Contact us for a customized quote based on
+            your requirements.
+          </p>
+        </div>
+      </div>
+
+    </div>
+
+  </div>
+</section>
+
+  </main>
+
+  <!-- ============================================================
+       PRE-FOOTER CTA + FOOTER
+       ============================================================ -->
+  <!-- ================================================
+     FOOTER SECTION - SuccessTracker
+     Pure HTML/CSS/JS | Mobile First | White / Light Premium
+     Include footer.css in <head> and footer.js before </body>
+     Self-contained — does not alter any other section.
+================================================= -->
+
+  <!-- Pre-Footer CTA Strip -->
+  <section class="prefooter-cta" aria-labelledby="prefooter-heading">
+    <div class="prefooter-inner">
+      <h2 class="prefooter-heading" id="prefooter-heading">
+        Give Your Child the Right Learning Support Today
+      </h2>
+      <p class="prefooter-text">
+        Book a demo today and let our academic experts help you find the perfect tutor based on your child's learning needs.
+      </p>
+      <div class="prefooter-actions">
+        <a href="#book" class="prefooter-btn-primary">
+          Book Demo
+        </a>
+        <a href="https://wa.me/917688864855" target="_blank" rel="noopener noreferrer" class="prefooter-btn-secondary">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+            <path d="M17.5 14.4c-.3-.15-1.7-.85-2-.95-.3-.1-.5-.15-.7.15-.2.3-.8.95-1 1.15-.2.2-.35.2-.65.05-.3-.15-1.3-.5-2.5-1.55-.9-.8-1.55-1.8-1.7-2.1-.2-.3 0-.45.15-.6.15-.15.3-.35.45-.5.15-.2.2-.3.3-.5.1-.2.05-.4 0-.55-.05-.15-.65-1.6-.9-2.2-.25-.55-.5-.5-.7-.5-.2 0-.4-.05-.6-.05-.2 0-.55.1-.85.4-.3.3-1.1 1.05-1.1 2.6s1.15 3.05 1.3 3.25c.15.2 2.25 3.5 5.5 4.75.8.3 1.4.5 1.9.65.8.25 1.5.2 2.1.15.65-.1 1.95-.8 2.2-1.55.3-.75.3-1.4.2-1.55-.1-.15-.3-.2-.6-.35z"/>
+            <path d="M12 2a10 10 0 0 0-8.55 15.15L2 22l4.95-1.4A10 10 0 1 0 12 2z"/>
+          </svg>
+          WhatsApp Us
+        </a>
+      </div>
+    </div>
+  </section>
+
+<footer class="site-footer" id="site-footer">
+  <div class="footer-container">
+
+    <!-- Top Area -->
+    <div class="footer-top">
+
+      <!-- Brand Column -->
+      <div class="footer-col footer-brand-col">
+        <a href="index.html" class="footer-logo-link" aria-label="SuccessTracker Home">
+          <img src="assets/logo.png" alt="SuccessTracker — Home Tuition" class="footer-logo-img" />
+        </a>
+        <p class="footer-tagline">
+          SuccessTracker connects students with verified home tutors across
+          Jaipur, delivering personalized learning, academic excellence and
+          continuous parent support.
+        </p>
+
+        <!-- Social Icons -->
+        <div class="footer-social">
+          <a href="#" class="footer-social-icon" aria-label="Facebook" target="_blank" rel="noopener noreferrer">
+            <svg viewBox="0 0 24 24" width="18" height="18" fill="currentColor">
+              <path d="M13.5 21v-7.5h2.5l.4-3H13.5V8.4c0-.87.24-1.46 1.49-1.46H16.5V4.3c-.26-.04-1.14-.11-2.17-.11-2.15 0-3.62 1.31-3.62 3.72v2.08H8.2v3h2.51V21h2.79z"/>
+            </svg>
+          </a>
+          <a href="#" class="footer-social-icon" aria-label="Instagram" target="_blank" rel="noopener noreferrer">
+            <svg viewBox="0 0 24 24" width="18" height="18" fill="currentColor">
+              <path d="M12 8.6a3.4 3.4 0 1 0 0 6.8 3.4 3.4 0 0 0 0-6.8zm0 5.6a2.2 2.2 0 1 1 0-4.4 2.2 2.2 0 0 1 0 4.4zm4.6-5.7a.8.8 0 1 1-1.6 0 .8.8 0 0 1 1.6 0zM20 8.14c-.06-1.2-.33-2.27-1.2-3.14-.87-.87-1.94-1.14-3.14-1.2C14.44 3.74 9.56 3.74 8.34 3.8c-1.2.06-2.27.33-3.14 1.2-.87.87-1.14 1.94-1.2 3.14C3.74 9.56 3.74 14.44 3.8 15.66c.06 1.2.33 2.27 1.2 3.14.87.87 1.94 1.14 3.14 1.2 1.22.06 6.1.06 7.32 0 1.2-.06 2.27-.33 3.14-1.2.87-.87 1.14-1.94 1.2-3.14.06-1.22.06-6.1 0-7.32zM18.3 17c-.26.66-.77 1.17-1.43 1.43-.99.39-3.34.3-4.87.3s-3.89.09-4.87-.3A2.55 2.55 0 0 1 5.7 17c-.39-.99-.3-3.34-.3-4.87s-.09-3.89.3-4.87c.26-.66.77-1.17 1.43-1.43.99-.39 3.34-.3 4.87-.3s3.89-.09 4.87.3c.66.26 1.17.77 1.43 1.43.39.99.3 3.34.3 4.87s.09 3.89-.3 4.87z"/>
+            </svg>
+          </a>
+          <a href="#" class="footer-social-icon" aria-label="LinkedIn" target="_blank" rel="noopener noreferrer">
+            <svg viewBox="0 0 24 24" width="18" height="18" fill="currentColor">
+              <path d="M6.94 8.5H3.56V20h3.38V8.5zM5.25 3.5A1.96 1.96 0 1 0 5.28 7.4a1.96 1.96 0 0 0-.03-3.9zM20.44 20h-3.38v-5.9c0-1.41-.03-3.22-1.96-3.22-1.97 0-2.27 1.54-2.27 3.12V20H9.45V8.5h3.24v1.57h.05c.45-.85 1.56-1.75 3.21-1.75 3.43 0 4.06 2.26 4.06 5.2V20z"/>
+            </svg>
+          </a>
+          <a href="#" class="footer-social-icon" aria-label="YouTube" target="_blank" rel="noopener noreferrer">
+            <svg viewBox="0 0 24 24" width="18" height="18" fill="currentColor">
+              <path d="M21.6 7.2s-.21-1.5-.87-2.16c-.83-.87-1.76-.87-2.19-.92C15.44 4 12 4 12 4h-.01s-3.44 0-6.54.12c-.43.05-1.36.05-2.19.92C2.6 5.7 2.4 7.2 2.4 7.2S2.2 8.94 2.2 10.67v1.56c0 1.73.2 3.47.2 3.47s.2 1.5.87 2.16c.83.87 1.92.84 2.4.93 1.74.17 7.33.22 7.33.22s3.44-.01 6.54-.13c.43-.05 1.36-.05 2.19-.92.66-.66.87-2.16.87-2.16s.2-1.74.2-3.47v-1.56c0-1.73-.2-3.47-.2-3.47zM9.98 14.5v-5.6l5.4 2.81-5.4 2.79z"/>
+            </svg>
+          </a>
+          <a href="https://wa.me/917688864855" class="footer-social-icon footer-social-icon-whatsapp" aria-label="WhatsApp" target="_blank" rel="noopener noreferrer">
+            <svg viewBox="0 0 24 24" width="18" height="18" fill="currentColor">
+              <path d="M17.5 14.4c-.3-.15-1.7-.85-2-.95-.3-.1-.5-.15-.7.15-.2.3-.8.95-1 1.15-.2.2-.35.2-.65.05-.3-.15-1.3-.5-2.5-1.55-.9-.8-1.55-1.8-1.7-2.1-.2-.3 0-.45.15-.6.15-.15.3-.35.45-.5.15-.2.2-.3.3-.5.1-.2.05-.4 0-.55-.05-.15-.65-1.6-.9-2.2-.25-.55-.5-.5-.7-.5-.2 0-.4-.05-.6-.05-.2 0-.55.1-.85.4-.3.3-1.1 1.05-1.1 2.6s1.15 3.05 1.3 3.25c.15.2 2.25 3.5 5.5 4.75.8.3 1.4.5 1.9.65.8.25 1.5.2 2.1.15.65-.1 1.95-.8 2.2-1.55.3-.75.3-1.4.2-1.55-.1-.15-.3-.2-.6-.35z"/>
+              <path d="M12 2a10 10 0 0 0-8.55 15.15L2 22l4.95-1.4A10 10 0 1 0 12 2z"/>
+            </svg>
+          </a>
+        </div>
+      </div>
+
+      <!-- Quick Links Column -->
+      <div class="footer-col">
+        <h4 class="footer-col-title">Quick Links</h4>
+        <ul class="footer-links">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="about.html">About Us</a></li>
+          <li><a href="#counselling">Become a Tutor</a></li>
+          <li><a href="#book">Book Demo</a></li>
+          <li><a href="#counselling">Contact Us</a></li>
+        </ul>
+      </div>
+
+      <!-- Subjects Column -->
+      <div class="footer-col">
+        <h4 class="footer-col-title">Subjects</h4>
+        <ul class="footer-links">
+          <li><a href="#subjects">Mathematics</a></li>
+          <li><a href="#subjects">Physics</a></li>
+          <li><a href="#subjects">Chemistry</a></li>
+          <li><a href="#subjects">Biology</a></li>
+          <li><a href="#subjects">English</a></li>
+          <li><a href="#subjects">Science</a></li>
+          <li><a href="#subjects">Commerce</a></li>
+          <li><a href="#subjects">Computer Science</a></li>
+        </ul>
+      </div>
+
+      <!-- Contact Column -->
+      <div class="footer-col">
+        <h4 class="footer-col-title">Contact Information</h4>
+        <ul class="footer-contact">
+          <li class="footer-contact-combo">
+            <span class="footer-contact-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+            </span>
+            <span class="footer-contact-combo-body">
+              <span class="footer-contact-label">Call &amp; WhatsApp</span>
+              <span class="footer-contact-combo-row">
+                <a href="tel:+917688864855">+91 76888 64855</a>
+                <a href="https://wa.me/917688864855" target="_blank" rel="noopener noreferrer"
+                   class="footer-contact-whatsapp-link" aria-label="Chat on WhatsApp">
+                  <svg viewBox="0 0 24 24" fill="currentColor"><path d="M17.5 14.4c-.3-.15-1.7-.85-2-.95-.3-.1-.5-.15-.7.15-.2.3-.8.95-1 1.15-.2.2-.35.2-.65.05-.3-.15-1.3-.5-2.5-1.55-.9-.8-1.55-1.8-1.7-2.1-.2-.3 0-.45.15-.6.15-.15.3-.35.45-.5.15-.2.2-.3.3-.5.1-.2.05-.4 0-.55-.05-.15-.65-1.6-.9-2.2-.25-.55-.5-.5-.7-.5-.2 0-.4-.05-.6-.05-.2 0-.55.1-.85.4-.3.3-1.1 1.05-1.1 2.6s1.15 3.05 1.3 3.25c.15.2 2.25 3.5 5.5 4.75.8.3 1.4.5 1.9.65.8.25 1.5.2 2.1.15.65-.1 1.95-.8 2.2-1.55.3-.75.3-1.4.2-1.55-.1-.15-.3-.2-.6-.35z"/><path d="M12 2a10 10 0 0 0-8.55 15.15L2 22l4.95-1.4A10 10 0 1 0 12 2z"/></svg>
+                </a>
+              </span>
+            </span>
+          </li>
+          <li>
+            <span class="footer-contact-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16v16H4z" opacity="0"/><path d="M22 6 12 13 2 6"/><path d="M2 6h20v12H2z"/></svg>
+            </span>
+            <a href="mailto:support@successtracker.in">support@successtracker.in</a>
+          </li>
+          <li>
+            <span class="footer-contact-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+            </span>
+            <span class="footer-contact-static">Jaipur, Rajasthan</span>
+          </li>
+          <li class="footer-hours">
+            <span class="footer-contact-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+            </span>
+            <span class="footer-contact-static">
+              Monday – Sunday<br />9:00 AM – 8:00 PM
+            </span>
+          </li>
+        </ul>
+      </div>
+
+    </div>
+
+    <!-- Divider -->
+    <div class="footer-divider"></div>
+
+    <!-- Bottom Bar -->
+    <div class="footer-bottom">
+      <div class="footer-bottom-left">
+        <p class="footer-copy">© 2026 SuccessTracker. All Rights Reserved.</p>
+        <p class="footer-legal-links">
+          <a href="#">Privacy Policy</a>
+          <span class="footer-legal-dot" aria-hidden="true">•</span>
+          <a href="#">Terms &amp; Conditions</a>
+          <span class="footer-legal-dot" aria-hidden="true">•</span>
+          <a href="#">Refund Policy</a>
+        </p>
+        <p class="footer-credit">
+          Designed &amp; Developed by
+          <a href="https://wa.me/917023534538" target="_blank" rel="noopener noreferrer">Market Mantra</a>
+        </p>
+      </div>
+
+      <button type="button" class="footer-back-to-top" id="footerBackToTop" aria-label="Back to top">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" width="18" height="18" aria-hidden="true">
+          <line x1="12" y1="19" x2="12" y2="5"/>
+          <polyline points="5 12 12 5 19 12"/>
+        </svg>
+      </button>
+    </div>
+
+  </div>
+</footer>
+
+  <!-- ============================================================
+       FLOATING WHATSAPP BUTTON
+       ============================================================ -->
+  <a href="https://wa.me/917688864855" target="_blank" rel="noopener noreferrer"
+     class="floating-whatsapp" aria-label="Chat with us on WhatsApp">
+    <span class="floating-whatsapp-pulse" aria-hidden="true"></span>
+    <svg viewBox="0 0 24 24" fill="currentColor" width="28" height="28" aria-hidden="true">
+      <path d="M17.5 14.4c-.3-.15-1.7-.85-2-.95-.3-.1-.5-.15-.7.15-.2.3-.8.95-1 1.15-.2.2-.35.2-.65.05-.3-.15-1.3-.5-2.5-1.55-.9-.8-1.55-1.8-1.7-2.1-.2-.3 0-.45.15-.6.15-.15.3-.35.45-.5.15-.2.2-.3.3-.5.1-.2.05-.4 0-.55-.05-.15-.65-1.6-.9-2.2-.25-.55-.5-.5-.7-.5-.2 0-.4-.05-.6-.05-.2 0-.55.1-.85.4-.3.3-1.1 1.05-1.1 2.6s1.15 3.05 1.3 3.25c.15.2 2.25 3.5 5.5 4.75.8.3 1.4.5 1.9.65.8.25 1.5.2 2.1.15.65-.1 1.95-.8 2.2-1.55.3-.75.3-1.4.2-1.55-.1-.15-.3-.2-.6-.35z"/>
+      <path d="M12 2a10 10 0 0 0-8.55 15.15L2 22l4.95-1.4A10 10 0 1 0 12 2z"/>
+    </svg>
+    <span class="floating-whatsapp-tooltip">Chat with us</span>
+  </a>
+
+  <!-- Global script (all sections) — deferred for performance -->
+  <script src="main.js" defer></script>
+
+</body>
+</html>
