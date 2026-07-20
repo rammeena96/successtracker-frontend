@@ -29,62 +29,8 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,wght@0,500;0,600;0,700;1,500;1,600&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
 
-  <!-- Global stylesheet (shared with the rest of the site — not modified) -->
+  <!-- Global stylesheet (shared with the rest of the site) -->
   <link rel="stylesheet" href="styles.css" />
-
-  <!-- Page-only styling for the "Coming Soon" notice below the hero.
-       Scoped locally so styles.css does not need to be touched. -->
-  <style>
-    .contact-coming-soon {
-      width: 100%;
-      background: var(--white);
-      padding: var(--space-section-y-mob) var(--space-x-mob) calc(var(--space-section-y-mob) * 1.3);
-      font-family: var(--font);
-      text-align: center;
-    }
-
-    .contact-coming-soon-inner {
-      max-width: 560px;
-      margin: 0 auto;
-    }
-
-    .contact-coming-soon-badge {
-      display: inline-flex;
-      align-items: center;
-      gap: .5rem;
-      background: var(--brand-light);
-      color: var(--brand-dark);
-      font-size: .72rem;
-      font-weight: 700;
-      letter-spacing: .08em;
-      text-transform: uppercase;
-      padding: .4rem 1rem;
-      border-radius: var(--radius-full);
-      margin-bottom: 1.5rem;
-    }
-
-    .contact-coming-soon-title {
-      font-family: var(--font-display);
-      font-size: clamp(1.6rem, 3vw, 2.1rem);
-      font-weight: 600;
-      letter-spacing: -.01em;
-      color: var(--text);
-      margin: 0 0 .85rem;
-    }
-
-    .contact-coming-soon-text {
-      font-size: 1rem;
-      color: var(--text-sub);
-      line-height: 1.7;
-      margin: 0;
-    }
-
-    @media (min-width: 900px) {
-      .contact-coming-soon {
-        padding: var(--space-section-y) var(--space-x) calc(var(--space-section-y) * 1.2);
-      }
-    }
-  </style>
 </head>
 <body>
 
@@ -98,7 +44,7 @@
   <div class="st-nav-inner">
 
     <!-- Logo -->
-    <a href="index.html" class="st-logo" aria-label="SuccessTracker Home">
+    <a href="#home" class="st-logo" aria-label="SuccessTracker Home">
       <img src="assets/logo.png" alt="SuccessTracker — Home Tuition" class="st-logo-img" />
     </a>
 
@@ -107,15 +53,15 @@
       <ul class="st-nav-list" role="list">
 
         <li class="st-nav-item">
-          <a href="index.html" class="st-nav-link">Home</a>
+          <a href="#home" class="st-nav-link st-active" aria-current="page">Home</a>
         </li>
 
         <li class="st-nav-item">
-          <a href="about.html" class="st-nav-link">About Us</a>
+          <a href="#why-us" class="st-nav-link">About Us</a>
         </li>
 
         <li class="st-nav-item">
-          <a href="index.html#counselling" class="st-nav-link">Join as Tutor</a>
+          <a href="#counselling" class="st-nav-link">Join as Tutor</a>
         </li>
 
         <!-- More Dropdown -->
@@ -135,17 +81,17 @@
 
           <div class="st-dropdown" id="st-more-menu"
                role="menu" aria-labelledby="st-more-btn">
-            <a href="about.html"      class="st-dropdown-item" role="menuitem">
+            <a href="#why-us"      class="st-dropdown-item" role="menuitem">
               <span class="st-di-icon">✦</span>Why Choose Us
             </a>
-            <a href="index.html#how"         class="st-dropdown-item" role="menuitem">
+            <a href="#how"         class="st-dropdown-item" role="menuitem">
               <span class="st-di-icon">⟳</span>How It Works
             </a>
-            <a href="index.html#counselling"     class="st-dropdown-item" role="menuitem">
+            <a href="#counselling"     class="st-dropdown-item" role="menuitem">
               <span class="st-di-icon">₹</span>Fee Structure
             </a>
             <div class="st-dropdown-divider" role="separator"></div>
-            <a href="contact.html"        class="st-dropdown-item st-active" role="menuitem" aria-current="page">
+            <a href="#book"        class="st-dropdown-item" role="menuitem">
               <span class="st-di-icon">📞</span>Contact Us
             </a>
           </div>
@@ -156,7 +102,7 @@
 
     <!-- Right Actions -->
     <div class="st-nav-actions">
-      <a href="index.html#book" class="st-btn-demo">
+      <a href="#book" class="st-btn-demo">
         Book Demo
       </a>
       <!-- Hamburger -->
@@ -177,7 +123,7 @@
      role="dialog" aria-modal="true" aria-label="Mobile navigation"
      hidden>
   <div class="st-mob-top">
-    <a href="index.html" class="st-logo" onclick="stCloseMenu()" aria-label="SuccessTracker Home">
+    <a href="#home" class="st-logo" onclick="stCloseMenu()" aria-label="SuccessTracker Home">
       <img src="assets/logo.png" alt="SuccessTracker — Home Tuition" class="st-logo-img" />
     </a>
     <button class="st-mob-close" onclick="stCloseMenu()" aria-label="Close menu">
@@ -189,17 +135,17 @@
   </div>
 
   <nav class="st-mob-nav" aria-label="Mobile navigation">
-    <a href="index.html"       class="st-mob-link" onclick="stCloseMenu()">🏠 Home</a>
-    <a href="about.html"     class="st-mob-link" onclick="stCloseMenu()">⭐ About Us</a>
-    <a href="index.html#how"        class="st-mob-link" onclick="stCloseMenu()">⟳ How It Works</a>
-    <a href="index.html#counselling"    class="st-mob-link" onclick="stCloseMenu()">👨‍🏫 Join as Tutor</a>
-    <a href="index.html#counselling"    class="st-mob-link" onclick="stCloseMenu()">₹ Fee Structure</a>
-    <a href="index.html#counselling" class="st-mob-link" onclick="stCloseMenu()">📞 Free Counselling</a>
-    <a href="contact.html"       class="st-mob-link" onclick="stCloseMenu()">🎓 Contact Us</a>
+    <a href="#home"       class="st-mob-link" onclick="stCloseMenu()">🏠 Home</a>
+    <a href="#why-us"     class="st-mob-link" onclick="stCloseMenu()">⭐ About Us</a>
+    <a href="#how"        class="st-mob-link" onclick="stCloseMenu()">⟳ How It Works</a>
+    <a href="#counselling"    class="st-mob-link" onclick="stCloseMenu()">👨‍🏫 Join as Tutor</a>
+    <a href="#counselling"    class="st-mob-link" onclick="stCloseMenu()">₹ Fee Structure</a>
+    <a href="#counselling" class="st-mob-link" onclick="stCloseMenu()">📞 Free Counselling</a>
+    <a href="#book"       class="st-mob-link" onclick="stCloseMenu()">🎓 Contact Us</a>
   </nav>
 
   <div class="st-mob-actions">
-    <a href="index.html#book"    class="st-mob-demo-btn" onclick="stCloseMenu()">Book Demo</a>
+    <a href="#book"    class="st-mob-demo-btn" onclick="stCloseMenu()">Book Demo</a>
   </div>
 
   <p class="st-mob-footer">
@@ -213,33 +159,41 @@
   <main id="main-content">
 
     <!-- ============================================================
-         HERO (reuses .about-hero* shell classes already defined
-         in styles.css — no CSS changes required)
+         SECTION 1 — PREMIUM HERO (reuses .about-hero* — already
+         defined in styles.css, zero new CSS)
          ============================================================ -->
-    <section class="about-hero" id="contact-hero" aria-label="Contact Us">
+    <section class="about-hero" id="contact-hero" aria-label="Contact SuccessTracker">
       <div class="about-hero-inner">
 
         <div class="about-hero-text">
-          <h1 class="about-hero-title">Contact Us</h1>
+          <span class="about-hero-badge">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+            Contact SuccessTracker
+          </span>
+
+          <h1 class="about-hero-title">Get In Touch With Our Team</h1>
           <p class="about-hero-desc">
-            Need help finding the right tutor?
-            Our education counsellors are here to help.
+            Whether you're looking for a home tutor, want to become a tutor, or
+            have any questions, we're here to help you.
           </p>
 
           <div class="about-hero-actions">
             <a href="index.html#book" class="sh-btn-primary">
               <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
-              Book Demo
+              Book Free Demo
             </a>
-            <a href="https://wa.me/917688864855" target="_blank" rel="noopener noreferrer" class="sh-btn-secondary">
+            <!-- Dummy link per brief — not yet wired to a live WhatsApp number for this button -->
+            <a href="#" class="sh-btn-secondary">
               <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M17.5 14.4c-.3-.15-1.7-.85-2-.95-.3-.1-.5-.15-.7.15-.2.3-.8.95-1 1.15-.2.2-.35.2-.65.05-.3-.15-1.3-.5-2.5-1.55-.9-.8-1.55-1.8-1.7-2.1-.2-.3 0-.45.15-.6.15-.15.3-.35.45-.5.15-.2.2-.3.3-.5.1-.2.05-.4 0-.55-.05-.15-.65-1.6-.9-2.2-.25-.55-.5-.5-.7-.5-.2 0-.4-.05-.6-.05-.2 0-.55.1-.85.4-.3.3-1.1 1.05-1.1 2.6s1.15 3.05 1.3 3.25c.15.2 2.25 3.5 5.5 4.75.8.3 1.4.5 1.9.65.8.25 1.5.2 2.1.15.65-.1 1.95-.8 2.2-1.55.3-.75.3-1.4.2-1.55-.1-.15-.3-.2-.6-.35z"/><path d="M12 2a10 10 0 0 0-8.55 15.15L2 22l4.95-1.4A10 10 0 1 0 12 2z"/></svg>
-              WhatsApp
+              Chat on WhatsApp
             </a>
           </div>
         </div>
 
         <div class="about-hero-visual">
           <div class="about-hero-illustration">
+            <span class="about-float-chip about-float-chip-1">📞 We Reply Fast</span>
+            <span class="about-float-chip about-float-chip-2">✓ 7 Days a Week</span>
             <svg viewBox="0 0 200 200" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
               <circle cx="100" cy="100" r="88" fill="#e8f5ee"/>
               <rect x="55" y="70" width="90" height="64" rx="10" stroke="#1a6b4a" stroke-width="4" fill="none"/>
@@ -253,16 +207,368 @@
       </div>
     </section>
 
+
     <!-- ============================================================
-         COMING SOON NOTICE
+         SECTION 2 — CONTACT INFORMATION CARDS
+         Reuses .sw-grid/.contact-cards-grid layout + .sw-card, with
+         the new .contact-glass-card modifier for the frosted-glass look.
          ============================================================ -->
-    <section class="contact-coming-soon" aria-label="Page status">
-      <div class="contact-coming-soon-inner">
-        <span class="contact-coming-soon-badge">Under Development</span>
-        <h2 class="contact-coming-soon-title">Contact Page Coming Soon</h2>
-        <p class="contact-coming-soon-text">
-          This page is currently under development.
+    <section class="sw-section" id="contact-info" aria-labelledby="contact-info-heading">
+      <div class="sw-inner">
+
+        <div class="sw-header">
+          <div class="sw-eyebrow" aria-hidden="true">Contact Information</div>
+          <h2 class="sw-title" id="contact-info-heading">Reach Us Any Way You Prefer</h2>
+          <div class="sw-header-rule" aria-hidden="true"></div>
+        </div>
+
+        <div class="sw-grid contact-cards-grid" role="list">
+
+          <article class="sw-card contact-glass-card" role="listitem">
+            <div class="sw-card-icon sw-icon-green" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+            </div>
+            <div class="sw-card-body">
+              <h3 class="sw-card-title">Phone Number</h3>
+              <p class="contact-card-value"><a href="tel:+917688864855">+91 76888 64855</a></p>
+            </div>
+          </article>
+
+          <article class="sw-card contact-glass-card" role="listitem">
+            <div class="sw-card-icon sw-icon-amber" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16v16H4z" opacity="0"/><path d="M22 6 12 13 2 6"/><path d="M2 6h20v12H2z"/></svg>
+            </div>
+            <div class="sw-card-body">
+              <h3 class="sw-card-title">Email</h3>
+              <p class="contact-card-value"><a href="mailto:info@successtracker.in">info@successtracker.in</a></p>
+            </div>
+          </article>
+
+          <article class="sw-card contact-glass-card" role="listitem">
+            <div class="sw-card-icon sw-icon-blue" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+            </div>
+            <div class="sw-card-body">
+              <h3 class="sw-card-title">Address</h3>
+              <p class="contact-card-value">Jaipur, Rajasthan</p>
+            </div>
+          </article>
+
+          <article class="sw-card contact-glass-card" role="listitem">
+            <div class="sw-card-icon sw-icon-purple" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+            </div>
+            <div class="sw-card-body">
+              <h3 class="sw-card-title">Working Hours</h3>
+              <p class="contact-card-value">Monday – Sunday<br>9 AM – 8 PM</p>
+            </div>
+          </article>
+
+        </div>
+      </div>
+    </section>
+
+
+    <!-- ============================================================
+         SECTION 3 — CONTACT FORM
+         Reuses .contact-form-section / .cs-form-card / .cs-field /
+         .cs-label / .cs-input / .cs-select / .cs-submit / .cs-footnote
+         (all already defined). Structured with clear name="" attributes
+         so it's ready for future backend wiring, but intentionally has
+         NO submit handler or fetch call — per the brief, no JavaScript
+         has been invented for this form. The button is type="button"
+         so it does not attempt a page-reloading default submission.
+         ============================================================ -->
+    <section class="contact-form-section" id="contact-form" aria-labelledby="contact-form-heading">
+      <div class="cs-form-card">
+
+        <div class="cs-form-header">
+          <div class="cs-form-icon" aria-hidden="true">✉️</div>
+          <div>
+            <p class="cs-form-title" id="contact-form-heading">Send Us a Message</p>
+            <p class="cs-form-sub">Fill in your details and our counsellor will get back to you.</p>
+          </div>
+        </div>
+
+        <!-- No action/JS wired yet — structured and ready for backend integration -->
+        <form class="cs-form" id="contact-page-form" novalidate>
+
+          <div class="contact-field-row">
+            <div class="cs-field">
+              <label for="contact_full_name" class="cs-label">Full Name *</label>
+              <input type="text" id="contact_full_name" name="full_name"
+                     class="cs-input" placeholder="e.g. Sunita Verma"
+                     autocomplete="name" required />
+            </div>
+            <div class="cs-field">
+              <label for="contact_phone" class="cs-label">Phone Number *</label>
+              <input type="tel" id="contact_phone" name="phone"
+                     class="cs-input" placeholder="e.g. 9876543210"
+                     autocomplete="tel" required pattern="[6-9][0-9]{9}" />
+            </div>
+          </div>
+
+          <div class="contact-field-row">
+            <div class="cs-field">
+              <label for="contact_email" class="cs-label">Email</label>
+              <input type="email" id="contact_email" name="email"
+                     class="cs-input" placeholder="e.g. sunita@example.com"
+                     autocomplete="email" />
+            </div>
+            <div class="cs-field">
+              <label for="contact_class" class="cs-label">Class *</label>
+              <select id="contact_class" name="student_class" class="cs-input cs-select" required>
+                <option value="">Select Class</option>
+                <option>Nursery – KG</option>
+                <option>Class 1 – 2</option>
+                <option>Class 3 – 5</option>
+                <option>Class 6 – 8</option>
+                <option>Class 9 – 10</option>
+                <option>Class 11 – 12</option>
+              </select>
+            </div>
+          </div>
+
+          <div class="contact-field-row">
+            <div class="cs-field">
+              <label for="contact_subject" class="cs-label">Subject *</label>
+              <select id="contact_subject" name="subject" class="cs-input cs-select" required>
+                <option value="">Select Subject</option>
+                <option>Mathematics</option>
+                <option>Physics</option>
+                <option>Chemistry</option>
+                <option>Biology</option>
+                <option>English</option>
+                <option>Science</option>
+                <option>Commerce</option>
+                <option>Computer Science</option>
+              </select>
+            </div>
+            <div class="cs-field">
+              <label for="contact_area" class="cs-label">Area *</label>
+              <input type="text" id="contact_area" name="area"
+                     class="cs-input" placeholder="e.g. Vaishali Nagar"
+                     required />
+            </div>
+          </div>
+
+          <div class="cs-field">
+            <label for="contact_message" class="cs-label">Message</label>
+            <textarea id="contact_message" name="message" class="cs-input contact-textarea" rows="4"
+                      placeholder="Tell us a bit about what you're looking for…"></textarea>
+          </div>
+
+          <button type="button" class="cs-submit" id="contact-submit-btn">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none"
+                 stroke="currentColor" stroke-width="2.2"
+                 stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <rect x="3" y="4" width="18" height="18" rx="2"/>
+              <line x1="16" y1="2" x2="16" y2="6"/>
+              <line x1="8"  y1="2" x2="8"  y2="6"/>
+              <line x1="3"  y1="10" x2="21" y2="10"/>
+            </svg>
+            Book Free Demo
+          </button>
+
+          <p class="cs-footnote">
+            🔒 Your details are safe with us. We never share your information.
+          </p>
+
+        </form>
+      </div>
+    </section>
+
+
+    <!-- ============================================================
+         SECTION 4 — GOOGLE MAP (reuses .contact-map-section /
+         .contact-map-frame — already defined, placeholder as agreed)
+         ============================================================ -->
+    <section class="contact-map-section" id="contact-map" aria-label="Our location on the map">
+      <div class="contact-map-inner">
+        <!-- Replace with official Google Maps embed -->
+        <div class="contact-map-frame">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+          <p>Google Maps embed will appear here — serving students across Jaipur, Rajasthan.</p>
+        </div>
+      </div>
+    </section>
+
+
+    <!-- ============================================================
+         SECTION 5 — WHY CONTACT SUCCESSTRACKER
+         (reuses .sw-grid / .sw-card exactly as-is, zero new CSS)
+         ============================================================ -->
+    <section class="sw-section" id="why-contact-us" aria-labelledby="why-contact-heading" style="background:var(--white);">
+      <div class="sw-inner">
+
+        <div class="sw-header">
+          <div class="sw-eyebrow" aria-hidden="true">Why Contact Us</div>
+          <h2 class="sw-title" id="why-contact-heading">Why Contact SuccessTracker</h2>
+          <div class="sw-header-rule" aria-hidden="true"></div>
+        </div>
+
+        <div class="sw-grid" role="list">
+
+          <article class="sw-card" role="listitem">
+            <div class="sw-card-icon sw-icon-green" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><polyline points="9 12 11 14 15 10"/></svg>
+            </div>
+            <div class="sw-card-body">
+              <h3 class="sw-card-title">Verified Tutors</h3>
+              <p class="sw-card-desc">Every tutor is background-checked and quality-verified.</p>
+            </div>
+          </article>
+
+          <article class="sw-card" role="listitem">
+            <div class="sw-card-icon sw-icon-amber" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/></svg>
+            </div>
+            <div class="sw-card-body">
+              <h3 class="sw-card-title">Fast Tutor Matching</h3>
+              <p class="sw-card-desc">We connect you with the right tutor quickly, without the wait.</p>
+            </div>
+          </article>
+
+          <article class="sw-card" role="listitem">
+            <div class="sw-card-icon sw-icon-blue" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+            </div>
+            <div class="sw-card-body">
+              <h3 class="sw-card-title">Personal Counselling</h3>
+              <p class="sw-card-desc">Speak with a real academic counsellor, not a call centre script.</p>
+            </div>
+          </article>
+
+          <article class="sw-card" role="listitem">
+            <div class="sw-card-icon sw-icon-rose" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+            </div>
+            <div class="sw-card-body">
+              <h3 class="sw-card-title">Support 7 Days</h3>
+              <p class="sw-card-desc">Our team is reachable every day of the week, not just weekdays.</p>
+            </div>
+          </article>
+
+        </div>
+      </div>
+    </section>
+
+
+    <!-- ============================================================
+         SECTION 6 — WHATSAPP CTA (reuses .prefooter-cta exactly as-is)
+         ============================================================ -->
+    <section class="prefooter-cta" aria-labelledby="contact-whatsapp-heading">
+      <div class="prefooter-inner">
+        <h2 class="prefooter-heading" id="contact-whatsapp-heading">
+          Need Immediate Assistance?
+        </h2>
+        <p class="prefooter-text">
+          Chat directly with our counselling team.
         </p>
+        <div class="prefooter-actions">
+          <a href="https://wa.me/917688864855" target="_blank" rel="noopener noreferrer" class="prefooter-btn-primary">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M17.5 14.4c-.3-.15-1.7-.85-2-.95-.3-.1-.5-.15-.7.15-.2.3-.8.95-1 1.15-.2.2-.35.2-.65.05-.3-.15-1.3-.5-2.5-1.55-.9-.8-1.55-1.8-1.7-2.1-.2-.3 0-.45.15-.6.15-.15.3-.35.45-.5.15-.2.2-.3.3-.5.1-.2.05-.4 0-.55-.05-.15-.65-1.6-.9-2.2-.25-.55-.5-.5-.7-.5-.2 0-.4-.05-.6-.05-.2 0-.55.1-.85.4-.3.3-1.1 1.05-1.1 2.6s1.15 3.05 1.3 3.25c.15.2 2.25 3.5 5.5 4.75.8.3 1.4.5 1.9.65.8.25 1.5.2 2.1.15.65-.1 1.95-.8 2.2-1.55.3-.75.3-1.4.2-1.55-.1-.15-.3-.2-.6-.35z"/><path d="M12 2a10 10 0 0 0-8.55 15.15L2 22l4.95-1.4A10 10 0 1 0 12 2z"/></svg>
+            Chat on WhatsApp
+          </a>
+        </div>
+      </div>
+    </section>
+
+
+    <!-- ============================================================
+         SECTION 7 — FAQ (reuses .faq-* exactly as-is)
+         ============================================================ -->
+    <section class="faq-section" id="contact-faq-section">
+      <div class="faq-container">
+
+        <div class="faq-heading">
+          <span class="faq-tag">FAQs</span>
+          <h2 class="faq-title">Frequently Asked Questions</h2>
+        </div>
+
+        <div class="faq-accordion">
+
+          <div class="faq-item">
+            <button class="faq-question" aria-expanded="false">
+              <span>How soon can I get a tutor?</span>
+              <span class="faq-icon">+</span>
+            </button>
+            <div class="faq-answer">
+              <p>
+                In most cases, we match you with a suitable verified tutor within 24
+                hours of your enquiry.
+              </p>
+            </div>
+          </div>
+
+          <div class="faq-item">
+            <button class="faq-question" aria-expanded="false">
+              <span>Do you provide demo classes?</span>
+              <span class="faq-icon">+</span>
+            </button>
+            <div class="faq-answer">
+              <p>
+                Yes, the first demo class is completely free with no obligation, so
+                you can evaluate the tutor before enrolling in regular sessions.
+              </p>
+            </div>
+          </div>
+
+          <div class="faq-item">
+            <button class="faq-question" aria-expanded="false">
+              <span>Which classes do you cover?</span>
+              <span class="faq-icon">+</span>
+            </button>
+            <div class="faq-answer">
+              <p>
+                We provide home tuition for students from Nursery to Class 12,
+                covering CBSE, RBSE and other major boards.
+              </p>
+            </div>
+          </div>
+
+          <div class="faq-item">
+            <button class="faq-question" aria-expanded="false">
+              <span>Can I change my tutor?</span>
+              <span class="faq-icon">+</span>
+            </button>
+            <div class="faq-answer">
+              <p>
+                Absolutely. If you're not fully satisfied with your assigned tutor,
+                you can request a replacement at any time and we'll arrange a
+                suitable alternative promptly.
+              </p>
+            </div>
+          </div>
+
+          <div class="faq-item">
+            <button class="faq-question" aria-expanded="false">
+              <span>Do you provide female tutors?</span>
+              <span class="faq-icon">+</span>
+            </button>
+            <div class="faq-answer">
+              <p>
+                Yes, we understand this is important for many families — just let
+                your counsellor know your preference when booking a demo.
+              </p>
+            </div>
+          </div>
+
+          <div class="faq-item">
+            <button class="faq-question" aria-expanded="false">
+              <span>How do I pay fees?</span>
+              <span class="faq-icon">+</span>
+            </button>
+            <div class="faq-answer">
+              <p>
+                Your counsellor will share transparent, customized pricing and
+                payment details based on your child's class, subject and session
+                schedule before you commit to anything.
+              </p>
+            </div>
+          </div>
+
+        </div>
       </div>
     </section>
 
@@ -279,7 +585,7 @@
 
       <!-- Brand Column -->
       <div class="footer-col footer-brand-col">
-        <a href="index.html" class="footer-logo-link" aria-label="SuccessTracker Home">
+        <a href="#home" class="footer-logo-link" aria-label="SuccessTracker Home">
           <img src="assets/logo.png" alt="SuccessTracker — Home Tuition" class="footer-logo-img" />
         </a>
         <p class="footer-tagline">
@@ -323,11 +629,11 @@
       <div class="footer-col">
         <h4 class="footer-col-title">Quick Links</h4>
         <ul class="footer-links">
-          <li><a href="index.html">Home</a></li>
-          <li><a href="about.html">About Us</a></li>
-          <li><a href="index.html#counselling">Become a Tutor</a></li>
-          <li><a href="index.html#book">Book Demo</a></li>
-          <li><a href="contact.html">Contact Us</a></li>
+          <li><a href="#home">Home</a></li>
+          <li><a href="#why-us">About Us</a></li>
+          <li><a href="#counselling">Become a Tutor</a></li>
+          <li><a href="#book">Book Demo</a></li>
+          <li><a href="#counselling">Contact Us</a></li>
         </ul>
       </div>
 
@@ -335,14 +641,14 @@
       <div class="footer-col">
         <h4 class="footer-col-title">Subjects</h4>
         <ul class="footer-links">
-          <li><a href="index.html#subjects">Mathematics</a></li>
-          <li><a href="index.html#subjects">Physics</a></li>
-          <li><a href="index.html#subjects">Chemistry</a></li>
-          <li><a href="index.html#subjects">Biology</a></li>
-          <li><a href="index.html#subjects">English</a></li>
-          <li><a href="index.html#subjects">Science</a></li>
-          <li><a href="index.html#subjects">Commerce</a></li>
-          <li><a href="index.html#subjects">Computer Science</a></li>
+          <li><a href="#subjects">Mathematics</a></li>
+          <li><a href="#subjects">Physics</a></li>
+          <li><a href="#subjects">Chemistry</a></li>
+          <li><a href="#subjects">Biology</a></li>
+          <li><a href="#subjects">English</a></li>
+          <li><a href="#subjects">Science</a></li>
+          <li><a href="#subjects">Commerce</a></li>
+          <li><a href="#subjects">Computer Science</a></li>
         </ul>
       </div>
 
@@ -440,7 +746,7 @@
 </body>
 </html>
 
-  <!-- Global script (shared with the rest of the site) — deferred for performance -->
+  <!-- Global script (shared with the rest of the site — not modified) -->
   <script src="main.js" defer></script>
 
 </body>
