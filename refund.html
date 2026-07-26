@@ -1,0 +1,505 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Refund Policy | SuccessTracker</title>
+  <meta name="description" content="Read SuccessTracker's Refund Policy regarding tutoring services, counselling sessions, course fees, cancellations, and refunds." />
+  <meta name="robots" content="noindex, follow" />
+
+  <!-- Favicon -->
+  <link rel="icon" href="assets/favicon.ico" sizes="any">
+  <link rel="icon"
+        type="image/png"
+        sizes="32x32"
+        href="assets/favicon-32.png">
+  <link rel="icon"
+        type="image/png"
+        sizes="16x16"
+        href="assets/favicon-16.png">
+  <link rel="apple-touch-icon"
+        sizes="180x180"
+        href="assets/favicon-180.png">
+  <meta name="theme-color" content="#166534">
+
+  <!-- Performance: establish early connection to the backend API used by the demo-booking and counselling forms -->
+  <link rel="preconnect" href="https://success-tracker-backend.onrender.com" />
+
+  <!-- Premium typography: Fraunces (display serif for headlines) + Inter (body/UI) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,wght@0,500;0,600;0,700;1,500;1,600&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+
+  <!-- Global stylesheet (shared with the rest of the site) -->
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+
+  <!-- Skip link for keyboard / screen-reader users -->
+  <a href="#main-content" class="skip-link">Skip to main content</a>
+
+  <!-- ============================================================
+       HEADER & NAVIGATION (same premium header, adapted only for
+       cross-page links, matching about.html / contact.html)
+       ============================================================ -->
+<header class="st-header" id="st-header" role="banner">
+  <div class="st-nav-inner">
+
+    <!-- Logo -->
+    <a href="index.html" class="st-logo" aria-label="SuccessTracker Home">
+      <img src="assets/logo.png" alt="SuccessTracker — Home Tuition" class="st-logo-img" />
+    </a>
+
+    <!-- Desktop Nav -->
+    <nav class="st-desktop-nav" aria-label="Main navigation">
+      <ul class="st-nav-list" role="list">
+
+        <li class="st-nav-item">
+          <a href="index.html" class="st-nav-link">Home</a>
+        </li>
+
+        <li class="st-nav-item">
+          <a href="about.html" class="st-nav-link">About Us</a>
+        </li>
+
+        <li class="st-nav-item">
+          <a href="index.html#counselling" class="st-nav-link">Join as Tutor</a>
+        </li>
+
+        <!-- More Dropdown -->
+        <li class="st-nav-item st-has-dropdown">
+          <button class="st-nav-link st-dropdown-trigger"
+                  aria-haspopup="true"
+                  aria-expanded="false"
+                  aria-controls="st-more-menu"
+                  id="st-more-btn">
+            More
+            <svg class="st-chevron" viewBox="0 0 16 16" fill="none"
+                 aria-hidden="true" width="14" height="14">
+              <path d="M4 6l4 4 4-4" stroke="currentColor"
+                    stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </button>
+
+          <div class="st-dropdown" id="st-more-menu"
+               role="menu" aria-labelledby="st-more-btn">
+            <a href="index.html#why-us"      class="st-dropdown-item" role="menuitem">
+              <span class="st-di-icon">✦</span>Why Choose Us
+            </a>
+            <a href="index.html#how"         class="st-dropdown-item" role="menuitem">
+              <span class="st-di-icon">⟳</span>How It Works
+            </a>
+            <a href="index.html#counselling"     class="st-dropdown-item" role="menuitem">
+              <span class="st-di-icon">₹</span>Fee Structure
+            </a>
+            <div class="st-dropdown-divider" role="separator"></div>
+            <a href="contact.html"        class="st-dropdown-item" role="menuitem">
+              <span class="st-di-icon">📞</span>Contact Us
+            </a>
+          </div>
+        </li>
+
+      </ul>
+    </nav>
+
+    <!-- Right Actions -->
+    <div class="st-nav-actions">
+      <a href="index.html#book" class="st-btn-demo">
+        Book Demo
+      </a>
+      <!-- Hamburger -->
+      <button class="st-hamburger" id="st-hamburger"
+              aria-label="Open menu" aria-expanded="false"
+              aria-controls="st-mobile-menu">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </div>
+
+  </div><!-- /st-nav-inner -->
+</header>
+
+<!-- ── MOBILE MENU ── -->
+<div class="st-mobile-menu" id="st-mobile-menu"
+     role="dialog" aria-modal="true" aria-label="Mobile navigation"
+     hidden>
+  <div class="st-mob-top">
+    <a href="index.html" class="st-logo" onclick="stCloseMenu()" aria-label="SuccessTracker Home">
+      <img src="assets/logo.png" alt="SuccessTracker — Home Tuition" class="st-logo-img" />
+    </a>
+    <button class="st-mob-close" onclick="stCloseMenu()" aria-label="Close menu">
+      <svg viewBox="0 0 24 24" fill="none" width="20" height="20">
+        <path d="M18 6L6 18M6 6l12 12" stroke="currentColor"
+              stroke-width="2" stroke-linecap="round"/>
+      </svg>
+    </button>
+  </div>
+
+  <nav class="st-mob-nav" aria-label="Mobile navigation">
+    <a href="index.html"       class="st-mob-link" onclick="stCloseMenu()">🏠 Home</a>
+    <a href="about.html"     class="st-mob-link" onclick="stCloseMenu()">⭐ About Us</a>
+    <a href="index.html#how"        class="st-mob-link" onclick="stCloseMenu()">⟳ How It Works</a>
+    <a href="index.html#counselling"    class="st-mob-link" onclick="stCloseMenu()">👨‍🏫 Join as Tutor</a>
+    <a href="index.html#counselling"    class="st-mob-link" onclick="stCloseMenu()">₹ Fee Structure</a>
+    <a href="index.html#counselling" class="st-mob-link" onclick="stCloseMenu()">📞 Free Counselling</a>
+    <a href="contact.html"       class="st-mob-link" onclick="stCloseMenu()">🎓 Contact Us</a>
+  </nav>
+
+  <div class="st-mob-actions">
+    <a href="index.html#book"    class="st-mob-demo-btn" onclick="stCloseMenu()">Book Demo</a>
+  </div>
+
+  <p class="st-mob-footer">
+    Jaipur's trusted home tuition platform · CBSE · RBSE
+  </p>
+</div>
+
+<!-- Mobile overlay -->
+<div class="st-mob-overlay" id="st-mob-overlay" onclick="stCloseMenu()" hidden></div>
+
+  <main id="main-content">
+
+    <!-- ============================================================
+         PAGE HEADER (reuses .about-hero* — already defined, zero new CSS)
+         ============================================================ -->
+    <section class="about-hero" id="refund-hero" aria-label="Refund Policy">
+      <div class="about-hero-inner" style="grid-template-columns: 1fr;">
+        <div class="about-hero-text" style="max-width: 720px;">
+          <span class="about-hero-badge">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="11" width="18" height="10" rx="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
+            Legal
+          </span>
+          <h1 class="about-hero-title">Refund Policy</h1>
+          <p class="about-hero-desc">
+            This Refund Policy explains the conditions under which refunds,
+            cancellations, and rescheduling requests are handled by SuccessTracker.
+          </p>
+        </div>
+      </div>
+    </section>
+
+
+    <!-- ============================================================
+         REFUND POLICY CONTENT
+         ============================================================ -->
+    <section class="legal-section" aria-labelledby="refund-hero">
+      <div class="legal-inner">
+        <div class="legal-card">
+
+          <span class="legal-updated">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+            Last Updated: 24 July 2026
+          </span>
+
+          <article class="legal-article">
+
+            <h2>1. Overview</h2>
+            <p>
+              At SuccessTracker, we want every parent and student to feel
+              confident and fairly treated when booking a demo class, counselling
+              session, or ongoing tuition with us. This Refund Policy explains,
+              in plain language, when a refund may be available, when it may
+              not, and how cancellations and rescheduling are handled. This
+              policy works alongside our
+              <a href="terms.html">Terms &amp; Conditions</a>.
+            </p>
+
+            <h2>2. Demo Session Policy</h2>
+            <p>
+              The first demo class with a tutor is offered completely free of
+              charge and without any payment or obligation. Since no fee is
+              collected for a demo session, no refund is applicable to it. If
+              you are not satisfied with your demo class, simply let your
+              academic counsellor know, and we will help you find a better-suited
+              tutor at no additional cost.
+            </p>
+
+            <h2>3. Fee Payment Policy</h2>
+            <p>
+              Fees for regular tuition sessions are only collected after you
+              have decided to proceed, and only once your academic counsellor
+              has shared clear, transparent pricing based on the student's
+              class, subject, and the number of weekly sessions agreed upon.
+              We do not charge any hidden fees beyond what has been
+              communicated and confirmed with you in advance.
+            </p>
+
+            <h2>4. Refund Eligibility</h2>
+            <p>
+              Refund requests for paid tuition sessions are considered on a
+              case-by-case basis and are generally evaluated based on factors
+              such as:
+            </p>
+            <ul>
+              <li>The number of sessions already conducted versus sessions paid for in advance.</li>
+              <li>Whether the request is due to a genuine service issue, such as a tutor being unavailable without alternative arrangement.</li>
+              <li>The timeframe within which the request is raised after payment.</li>
+            </ul>
+            <p>
+              Where a refund is approved, it will typically be calculated
+              proportionally, based on the sessions that have not yet been
+              delivered.
+            </p>
+
+            <h2>5. Non-Refundable Situations</h2>
+            <p>
+              To keep this policy fair to both families and tutors, refunds are
+              generally not available in situations such as:
+            </p>
+            <ul>
+              <li>Sessions that have already been conducted and completed.</li>
+              <li>A student's own change of mind after multiple sessions have already taken place, without any service issue.</li>
+              <li>Missed sessions due to the student or parent not being available at the scheduled time, without prior notice to reschedule.</li>
+              <li>Dissatisfaction with academic outcomes or exam results, as these depend on many factors beyond tutoring quality alone.</li>
+            </ul>
+
+            <h2>6. Cancellation by Student or Parent</h2>
+            <p>
+              You may request to cancel ongoing tuition at any time by informing
+              our team directly. We ask that cancellation requests be raised as
+              early as possible so we can settle any outstanding session
+              adjustments fairly. Any refund due for sessions paid in advance
+              but not yet delivered will be assessed as described in the
+              "Refund Eligibility" section above.
+            </p>
+
+            <h2>7. Cancellation by SuccessTracker</h2>
+            <p>
+              In the rare event that we are unable to continue providing a
+              tutor for your child — for example, if a tutor becomes
+              permanently unavailable and no suitable replacement can be
+              arranged within a reasonable time — we will inform you promptly
+              and offer either a replacement tutor or a fair refund for any
+              sessions paid for but not delivered.
+            </p>
+
+            <h2>8. Rescheduling Policy</h2>
+            <p>
+              We understand that schedules can change. Parents may request to
+              reschedule a session by informing our team or the tutor directly,
+              ideally at least a few hours before the scheduled time. Sessions
+              rescheduled with reasonable notice do not affect your fee balance.
+              Frequent last-minute rescheduling may, however, affect tutor
+              availability for future sessions.
+            </p>
+
+            <h2>9. Exceptional Circumstances</h2>
+            <p>
+              We recognize that genuine emergencies — such as medical issues,
+              family emergencies, or relocation — can affect a family's ability
+              to continue tuition as planned. In such cases, please reach out to
+              our team directly. We will review the situation with care and work
+              towards a fair and reasonable resolution, which may include a
+              partial refund, session credit, or a pause in scheduling, depending
+              on the circumstances.
+            </p>
+
+            <h2>10. Refund Processing Timeline</h2>
+            <p>
+              Where a refund is approved, we aim to process it within a
+              reasonable timeframe, typically within 7–10 working days from the
+              date of approval. The exact time for the amount to reflect in your
+              account may vary depending on your bank or payment provider, and
+              is outside our direct control.
+            </p>
+
+            <h2>11. Policy Updates</h2>
+            <p>
+              We may update this Refund Policy from time to time to reflect
+              changes in our services or for legal and regulatory reasons. Any
+              changes will be posted on this page, and we encourage you to
+              review it periodically if you have ongoing tuition with us.
+            </p>
+
+            <h2>12. Contact Information</h2>
+            <p>
+              If you have any questions about this Refund Policy, or would like
+              to discuss a specific cancellation or refund request, please reach
+              out to us:
+            </p>
+            <ul>
+              <li>Email: <a href="mailto:info@successtracker.in">info@successtracker.in</a></li>
+              <li>Phone / WhatsApp: <a href="tel:+917688864855">+91 76888 64855</a></li>
+              <li>Location: Jaipur, Rajasthan</li>
+            </ul>
+
+          </article>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ============================================================
+       FOOTER (same premium footer, adapted only for cross-page links)
+       ============================================================ -->
+<footer class="site-footer" id="site-footer">
+  <div class="footer-container">
+
+    <!-- Top Area -->
+    <div class="footer-top">
+
+      <!-- Brand Column -->
+      <div class="footer-col footer-brand-col">
+        <a href="index.html" class="footer-logo-link" aria-label="SuccessTracker Home">
+          <img src="assets/logo.png" alt="SuccessTracker — Home Tuition" class="footer-logo-img" />
+        </a>
+        <p class="footer-tagline">
+          SuccessTracker connects students with verified home tutors across
+          Jaipur, delivering personalized learning, academic excellence and
+          continuous parent support.
+        </p>
+
+        <!-- Social Icons -->
+        <div class="footer-social">
+          <a href="#" class="footer-social-icon" aria-label="Facebook" target="_blank" rel="noopener noreferrer">
+            <svg viewBox="0 0 24 24" width="18" height="18" fill="currentColor">
+              <path d="M13.5 21v-7.5h2.5l.4-3H13.5V8.4c0-.87.24-1.46 1.49-1.46H16.5V4.3c-.26-.04-1.14-.11-2.17-.11-2.15 0-3.62 1.31-3.62 3.72v2.08H8.2v3h2.51V21h2.79z"/>
+            </svg>
+          </a>
+          <a href="#" class="footer-social-icon" aria-label="Instagram" target="_blank" rel="noopener noreferrer">
+            <svg viewBox="0 0 24 24" width="18" height="18" fill="currentColor">
+              <path d="M12 8.6a3.4 3.4 0 1 0 0 6.8 3.4 3.4 0 0 0 0-6.8zm0 5.6a2.2 2.2 0 1 1 0-4.4 2.2 2.2 0 0 1 0 4.4zm4.6-5.7a.8.8 0 1 1-1.6 0 .8.8 0 0 1 1.6 0zM20 8.14c-.06-1.2-.33-2.27-1.2-3.14-.87-.87-1.94-1.14-3.14-1.2C14.44 3.74 9.56 3.74 8.34 3.8c-1.2.06-2.27.33-3.14 1.2-.87.87-1.14 1.94-1.2 3.14C3.74 9.56 3.74 14.44 3.8 15.66c.06 1.2.33 2.27 1.2 3.14.87.87 1.94 1.14 3.14 1.2 1.22.06 6.1.06 7.32 0 1.2-.06 2.27-.33 3.14-1.2.87-.87 1.14-1.94 1.2-3.14.06-1.22.06-6.1 0-7.32zM18.3 17c-.26.66-.77 1.17-1.43 1.43-.99.39-3.34.3-4.87.3s-3.89.09-4.87-.3A2.55 2.55 0 0 1 5.7 17c-.39-.99-.3-3.34-.3-4.87s-.09-3.89.3-4.87c.26-.66.77-1.17 1.43-1.43.99-.39 3.34-.3 4.87-.3s3.89-.09 4.87.3c.66.26 1.17.77 1.43 1.43.39.99.3 3.34.3 4.87s.09 3.89-.3 4.87z"/>
+            </svg>
+          </a>
+          <a href="#" class="footer-social-icon" aria-label="LinkedIn" target="_blank" rel="noopener noreferrer">
+            <svg viewBox="0 0 24 24" width="18" height="18" fill="currentColor">
+              <path d="M6.94 8.5H3.56V20h3.38V8.5zM5.25 3.5A1.96 1.96 0 1 0 5.28 7.4a1.96 1.96 0 0 0-.03-3.9zM20.44 20h-3.38v-5.9c0-1.41-.03-3.22-1.96-3.22-1.97 0-2.27 1.54-2.27 3.12V20H9.45V8.5h3.24v1.57h.05c.45-.85 1.56-1.75 3.21-1.75 3.43 0 4.06 2.26 4.06 5.2V20z"/>
+            </svg>
+          </a>
+          <a href="#" class="footer-social-icon" aria-label="YouTube" target="_blank" rel="noopener noreferrer">
+            <svg viewBox="0 0 24 24" width="18" height="18" fill="currentColor">
+              <path d="M21.6 7.2s-.21-1.5-.87-2.16c-.83-.87-1.76-.87-2.19-.92C15.44 4 12 4 12 4h-.01s-3.44 0-6.54.12c-.43.05-1.36.05-2.19.92C2.6 5.7 2.4 7.2 2.4 7.2S2.2 8.94 2.2 10.67v1.56c0 1.73.2 3.47.2 3.47s.2 1.5.87 2.16c.83.87 1.92.84 2.4.93 1.74.17 7.33.22 7.33.22s3.44-.01 6.54-.13c.43-.05 1.36-.05 2.19-.92.66-.66.87-2.16.87-2.16s.2-1.74.2-3.47v-1.56c0-1.73-.2-3.47-.2-3.47zM9.98 14.5v-5.6l5.4 2.81-5.4 2.79z"/>
+            </svg>
+          </a>
+          <a href="https://wa.me/917688864855" class="footer-social-icon footer-social-icon-whatsapp" aria-label="WhatsApp" target="_blank" rel="noopener noreferrer">
+            <svg viewBox="0 0 24 24" width="18" height="18" fill="currentColor">
+              <path d="M17.5 14.4c-.3-.15-1.7-.85-2-.95-.3-.1-.5-.15-.7.15-.2.3-.8.95-1 1.15-.2.2-.35.2-.65.05-.3-.15-1.3-.5-2.5-1.55-.9-.8-1.55-1.8-1.7-2.1-.2-.3 0-.45.15-.6.15-.15.3-.35.45-.5.15-.2.2-.3.3-.5.1-.2.05-.4 0-.55-.05-.15-.65-1.6-.9-2.2-.25-.55-.5-.5-.7-.5-.2 0-.4-.05-.6-.05-.2 0-.55.1-.85.4-.3.3-1.1 1.05-1.1 2.6s1.15 3.05 1.3 3.25c.15.2 2.25 3.5 5.5 4.75.8.3 1.4.5 1.9.65.8.25 1.5.2 2.1.15.65-.1 1.95-.8 2.2-1.55.3-.75.3-1.4.2-1.55-.1-.15-.3-.2-.6-.35z"/>
+              <path d="M12 2a10 10 0 0 0-8.55 15.15L2 22l4.95-1.4A10 10 0 1 0 12 2z"/>
+            </svg>
+          </a>
+        </div>
+      </div>
+
+      <!-- Quick Links Column -->
+      <div class="footer-col">
+        <h4 class="footer-col-title">Quick Links</h4>
+        <ul class="footer-links">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="about.html">About Us</a></li>
+          <li><a href="contact.html">Contact Us</a></li>
+          <li><a href="index.html#counselling">Become a Tutor</a></li>
+          <li><a href="index.html#book">Book Demo</a></li>
+        </ul>
+      </div>
+
+      <!-- Subjects Column -->
+      <div class="footer-col">
+        <h4 class="footer-col-title">Subjects</h4>
+        <ul class="footer-links">
+          <li><a href="index.html#subjects">Mathematics</a></li>
+          <li><a href="index.html#subjects">Physics</a></li>
+          <li><a href="index.html#subjects">Chemistry</a></li>
+          <li><a href="index.html#subjects">Biology</a></li>
+          <li><a href="index.html#subjects">English</a></li>
+          <li><a href="index.html#subjects">Science</a></li>
+          <li><a href="index.html#subjects">Commerce</a></li>
+          <li><a href="index.html#subjects">Computer Science</a></li>
+        </ul>
+      </div>
+
+      <!-- Contact Column -->
+      <div class="footer-col">
+        <h4 class="footer-col-title">Contact Information</h4>
+        <ul class="footer-contact">
+          <li class="footer-contact-combo">
+            <span class="footer-contact-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+            </span>
+            <span class="footer-contact-combo-body">
+              <span class="footer-contact-label">Call &amp; WhatsApp</span>
+              <span class="footer-contact-combo-row">
+                <a href="tel:+917688864855">+91 76888 64855</a>
+                <a href="https://wa.me/917688864855" target="_blank" rel="noopener noreferrer"
+                   class="footer-contact-whatsapp-link" aria-label="Chat on WhatsApp">
+                  <svg viewBox="0 0 24 24" fill="currentColor"><path d="M17.5 14.4c-.3-.15-1.7-.85-2-.95-.3-.1-.5-.15-.7.15-.2.3-.8.95-1 1.15-.2.2-.35.2-.65.05-.3-.15-1.3-.5-2.5-1.55-.9-.8-1.55-1.8-1.7-2.1-.2-.3 0-.45.15-.6.15-.15.3-.35.45-.5.15-.2.2-.3.3-.5.1-.2.05-.4 0-.55-.05-.15-.65-1.6-.9-2.2-.25-.55-.5-.5-.7-.5-.2 0-.4-.05-.6-.05-.2 0-.55.1-.85.4-.3.3-1.1 1.05-1.1 2.6s1.15 3.05 1.3 3.25c.15.2 2.25 3.5 5.5 4.75.8.3 1.4.5 1.9.65.8.25 1.5.2 2.1.15.65-.1 1.95-.8 2.2-1.55.3-.75.3-1.4.2-1.55-.1-.15-.3-.2-.6-.35z"/><path d="M12 2a10 10 0 0 0-8.55 15.15L2 22l4.95-1.4A10 10 0 1 0 12 2z"/></svg>
+                </a>
+              </span>
+            </span>
+          </li>
+          <li>
+            <span class="footer-contact-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16v16H4z" opacity="0"/><path d="M22 6 12 13 2 6"/><path d="M2 6h20v12H2z"/></svg>
+            </span>
+            <a href="mailto:support@successtracker.in">support@successtracker.in</a>
+          </li>
+          <li>
+            <span class="footer-contact-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+            </span>
+            <span class="footer-contact-static">Jaipur, Rajasthan</span>
+          </li>
+          <li class="footer-hours">
+            <span class="footer-contact-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+            </span>
+            <span class="footer-contact-static">
+              Monday – Sunday<br />9:00 AM – 8:00 PM
+            </span>
+          </li>
+        </ul>
+      </div>
+
+    </div>
+
+    <!-- Divider -->
+    <div class="footer-divider"></div>
+
+    <!-- Bottom Bar -->
+    <div class="footer-bottom">
+      <div class="footer-bottom-left">
+        <p class="footer-copy">© 2026 SuccessTracker. All Rights Reserved.</p>
+        <p class="footer-legal-links">
+          <a href="privacy.html">Privacy Policy</a>
+          <span class="footer-legal-dot" aria-hidden="true">•</span>
+          <a href="terms.html">Terms &amp; Conditions</a>
+          <span class="footer-legal-dot" aria-hidden="true">•</span>
+          <a href="refund.html">Refund Policy</a>
+        </p>
+        <p class="footer-credit">
+          Designed &amp; Developed by
+          <a href="https://wa.me/917023534538" target="_blank" rel="noopener noreferrer">Market Mantra</a>
+        </p>
+      </div>
+
+      <button type="button" class="footer-back-to-top" id="footerBackToTop" aria-label="Back to top">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" width="18" height="18" aria-hidden="true">
+          <line x1="12" y1="19" x2="12" y2="5"/>
+          <polyline points="5 12 12 5 19 12"/>
+        </svg>
+      </button>
+    </div>
+
+  </div>
+</footer>
+
+  <!-- ============================================================
+       FLOATING WHATSAPP BUTTON
+       ============================================================ -->
+  <a href="https://wa.me/917688864855" target="_blank" rel="noopener noreferrer"
+     class="floating-whatsapp" aria-label="Chat with us on WhatsApp">
+    <span class="floating-whatsapp-pulse" aria-hidden="true"></span>
+    <svg viewBox="0 0 24 24" fill="currentColor" width="28" height="28" aria-hidden="true">
+      <path d="M17.5 14.4c-.3-.15-1.7-.85-2-.95-.3-.1-.5-.15-.7.15-.2.3-.8.95-1 1.15-.2.2-.35.2-.65.05-.3-.15-1.3-.5-2.5-1.55-.9-.8-1.55-1.8-1.7-2.1-.2-.3 0-.45.15-.6.15-.15.3-.35.45-.5.15-.2.2-.3.3-.5.1-.2.05-.4 0-.55-.05-.15-.65-1.6-.9-2.2-.25-.55-.5-.5-.7-.5-.2 0-.4-.05-.6-.05-.2 0-.55.1-.85.4-.3.3-1.1 1.05-1.1 2.6s1.15 3.05 1.3 3.25c.15.2 2.25 3.5 5.5 4.75.8.3 1.4.5 1.9.65.8.25 1.5.2 2.1.15.65-.1 1.95-.8 2.2-1.55.3-.75.3-1.4.2-1.55-.1-.15-.3-.2-.6-.35z"/>
+      <path d="M12 2a10 10 0 0 0-8.55 15.15L2 22l4.95-1.4A10 10 0 1 0 12 2z"/>
+    </svg>
+    <span class="floating-whatsapp-tooltip">Chat with us</span>
+  </a>
+
+  <!-- Global script (all sections) — deferred for performance -->
+  <script src="main.js" defer></script>
+
+</body>
+</html>
+
